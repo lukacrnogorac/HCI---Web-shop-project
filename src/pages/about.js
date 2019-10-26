@@ -1,12 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/layout"
 
-const IndexPage = () => 
+const About = () => 
     <div>
         <Layout>
-            
+
         </Layout>
     </div>
 
-export default IndexPage
+export default About
