@@ -17,10 +17,14 @@ const layout = () =>
             </form>
         </div>
     </div>
+    <div class="logoSearch">
+        <img src="logo.ico" width="50px" height="50px" align="center"/>
+        <input type="text" placeholder="Search"/>
+    </div>
 
     <div class="footer">
         <div>
-            <img src="logo.ico" width="70px" height="70px" align="left"/>
+            <img src="logo.ico" width="50px" height="50px" align="left"/>
             <span>&copy; By maleri$h and Barke</span>
         </div>
     </div>
