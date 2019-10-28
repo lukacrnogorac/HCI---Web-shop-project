@@ -2,8 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import "./layout.css"
 
-const layout = () => 
-<div>
+const layout = ({ children }) => 
+<div id="container">
     <div class="header">
         <div>
             <Link to="/">Home</Link>
@@ -20,6 +20,10 @@ const layout = () =>
     <div class="logoSearch">
         <img src="logo.ico" width="50px" height="50px" align="center"/>
         <input type="text" placeholder="Search"/>
+    </div>
+
+    <div id="body">
+        {children}
     </div>
 
     <div class="footer">
