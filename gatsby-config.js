@@ -13,7 +13,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-source-file-system`,
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
         path: `${__dirname}/src`

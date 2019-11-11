@@ -1,9 +1,8 @@
-#container1 {
+#containerSidebar {
     display: grid;
     grid-template-columns: 210px 1fr;
     height: 100%;
     width: 100%;
-    position: absolute;
 }
 
 #sidebar {
@@ -26,4 +25,3 @@
     margin-left: 0px;
     text-align: center;
 }
-
