@@ -7,7 +7,17 @@
 module.exports = {
   siteMetadata: {
     title: 'Web-shop',
-    items: []
+    categories: [
+      {
+        name: 'Tehnika'
+      },
+      {
+        name: 'Namjestaj'
+      },
+      {
+        name: 'Razno'
+      }
+    ]
   },
   plugins: [
     `gatsby-transformer-sharp`,

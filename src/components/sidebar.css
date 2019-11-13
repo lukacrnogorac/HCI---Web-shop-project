@@ -1,27 +1,27 @@
 #containerSidebar {
-    display: grid;
-    grid-template-columns: 210px 1fr;
-    height: 100%;
-    width: 100%;
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  height: 100%;
+  width: 100%;
 }
 
 #sidebar {
-    grid-column-start: 1;
-    background-color: whitesmoke;
-    border-right: 1px solid black;
+  grid-column-start: 1;
+  background-color: whitesmoke;
+  border-right: 1px solid black;
 }
 
 #sidebar h3 {
-    text-align: center;
+  text-align: center;
 }
 
 #body {
-    grid-column-start: 2;
+  grid-column-start: 2;
 }
 
 .category {
-    background-color: lightblue;
-    margin: 2px;
-    margin-left: 0px;
-    text-align: center;
+  background-color: lightblue;
+  margin: 2px;
+  margin-left: 0px;
+  text-align: center;
 }

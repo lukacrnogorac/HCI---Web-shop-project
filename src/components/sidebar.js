@@ -1,21 +1,19 @@
 import React from "react"
-import { Link } from "gatsby"
 import "./sidebar.css"
 
-const sidebar = ({ children }) => 
-<div id="containerSidebar">
+const sidebar = ({ children }) => (
+  <div id="containerSidebar">
     <div id="sidebar">
-        <h3>Categories</h3>
-        <div className = "category">Category1</div>
-        <div className = "category">Category1</div>
-        <div className = "category">Category1</div>
-        <div className = "category">Category1</div>
-        <div className = "category">Category1</div>
-        <div className = "category">Category1</div>
+      <h3>Categories</h3>
+      <div className="category">Category1</div>
+      <div className="category">Category1</div>
+      <div className="category">Category1</div>
+      <div className="category">Category1</div>
+      <div className="category">Category1</div>
+      <div className="category">Category1</div>
     </div>
-    <div id="content">
-        {children}
-    </div>
-</div>
+    <div id="content">{children}</div>
+  </div>
+)
 
 export default sidebar
