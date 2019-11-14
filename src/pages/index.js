@@ -7,7 +7,10 @@ import Img from "gatsby-image"
 const IndexPage = ({ data }) => (
   <div>
     <Layout>
-      <Sidebar>
+      <Sidebar />
+      <div className="content">
+        <FeaturedProduct featuredProduct={data.allFile.edges[0]} />
+        <FeaturedCategory featuredCategories={data.allFile.edges} />
         {data.allFile.edges.map(({ node }) => {
           return (
             <div
@@ -18,11 +21,12 @@ const IndexPage = ({ data }) => (
                 key={node.id}
                 fluid={node.childImageSharp.fluid}
                 className="customImage"
+                style={{ height: "250px", width: "250px" }}
               />
             </div>
           )
         })}
-      </Sidebar>
+      </div>
       <div></div>
     </Layout>
   </div>
@@ -46,3 +50,12 @@ export const query = graphql`
     }
   }
 `
+
+export const FeaturedProduct = ({ props }) => {
+  console.log(props)
+  return <div></div>
+}
+
+export const FeaturedCategory = () => {
+  return <div></div>
+}

@@ -18,15 +18,27 @@ const layout = ({ children }) => (
       </div>
     </div>
     <div className="logoSearch">
-      <img src="logo.ico" width="50px" height="50px" align="center" />
+      <img
+        src="favicon.ico"
+        width="50px"
+        height="50px"
+        align="center"
+        alt="logo"
+      />
       <input type="text" placeholder="Search" />
     </div>
 
-    <div id="body">{children}</div>
+    <div id="mainContent">{children}</div>
 
     <div className="footer">
       <div>
-        <img src="logo.ico" width="50px" height="50px" align="left" />
+        <img
+          src="favicon.ico"
+          width="50px"
+          height="50px"
+          align="left"
+          alt="logo"
+        />
         <span>&copy; By maleri$h and Barke</span>
       </div>
     </div>

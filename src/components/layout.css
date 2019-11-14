@@ -6,12 +6,125 @@ body {
 }
 
 #container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: whitesmoke;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.header div {
+  margin: 10px 50px 15px 50px;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Times New Roman", Times, serif';
+  color: rgb(110, 212, 255);
+  margin: 0px 5px 0px 20px;
+}
+
+#logo {
+  padding: 0px 5px 0px 5px;
+}
+
+#loginButton {
+  width: 110px;
+  margin-right: 40px;
+  background: white;
+  border: 1px solid rgb(110, 212, 255);
+  border-radius: 5px;
+  font-family: 'Times New Roman", Times, serif';
+  font-size: 20px;
+  color: rgb(110, 212, 255);
+  cursor: pointer;
+}
+
+#registerButton {
+  width: 110px;
+  background: rgb(110, 212, 255);
+  border: 1px solid rgb(110, 212, 255);
+  border-radius: 5px;
+  font-family: 'Times New Roman", Times, serif';
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.logoSearch {
+  background-color: whitesmoke;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.logoSearch input {
+  margin-left: 5px;
+  width: 250px;
+}
+s .logoSearch img {
+  padding: 5px;
+}
+
+#mainContent {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  padding-bottom: 60px;
+}
+
+.footer {
+  background-color: whitesmoke;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  /* border-top: 1px solid black; */
+}
+
+.footer div {
+  display: flex;
+  justify-content: space-between;
+  height: 3vh;
+}
+
+.footer div img {
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.footer div span {
+  padding-right: 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+
+/* html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#container {
   min-height: 100vh;
   position: relative;
+  display: grid;
+  grid-template-columns: 210px 1fr;
 }
 .header {
   background-color: whitesmoke;
-  height: 5vh;
+  height: 7vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,7 +173,6 @@ body {
 
 .footer {
   background-color: whitesmoke;
-  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -114,4 +226,4 @@ s .logoSearch img {
 .customImage {
   width: 250px;
   height: 250px;
-}
+} */
