@@ -1,7 +1,7 @@
 import React from "react"
 import { Nav, Button } from "react-bootstrap"
 
-export default ({ children }) => (
+export const Layout = ({ children }) => (
   <div className="navigation">
     <div
       className="header"
@@ -81,7 +81,7 @@ export default ({ children }) => (
         {children}
       </div>
       <footer
-        class="page-footer font-small blue"
+        className="page-footer font-small blue"
         style={{
           position: "absolute",
           bottom: 0,
@@ -91,7 +91,7 @@ export default ({ children }) => (
         }}
       >
         <div
-          class="footer-copyright text-center py-3"
+          className="footer-copyright text-center py-3"
           style={{ height: "20px" }}
         >
           © 2018 Copyright:
@@ -101,3 +101,5 @@ export default ({ children }) => (
     </div>
   </div>
 )
+
+export default Layout

@@ -15,6 +15,7 @@ const IndexPage = ({ data }) => (
           return (
             <div
               className="item"
+              key={node.id}
               style={{ marginBottom: "0.2px", borderBottom: "1px solid black" }}
             >
               <Img
