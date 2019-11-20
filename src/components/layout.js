@@ -1,5 +1,5 @@
 import React from "react"
-import { Nav, Button } from "react-bootstrap"
+import { Nav, Button, InputGroup, FormControl } from "react-bootstrap"
 
 export const Layout = ({ children }) => (
   <div className="navigation">
@@ -56,18 +56,19 @@ export const Layout = ({ children }) => (
       }}
     >
       <img
-        src="favicon.ico"
-        width="50px"
-        height="50px"
+        src="logo.jpg"
+        width="75px"
+        height="75px"
         align="center"
         alt="logo"
         style={{ padding: "5px" }}
       />
-      <input
-        type="text"
-        placeholder="Search"
+      <InputGroup
+        className="mb-3"
         style={{ marginLeft: "5px", width: "250px" }}
-      />
+      >
+        <FormControl placeholder="Search for product" />
+      </InputGroup>
     </div>
     <div id="container" style={{ position: "relative", minHeight: "100vh" }}>
       <div
@@ -92,10 +93,21 @@ export const Layout = ({ children }) => (
       >
         <div
           className="footer-copyright text-center py-3"
-          style={{ height: "20px" }}
+          style={{
+            height: "20px",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
         >
-          © 2018 Copyright:
-          <span>By maleri$h and Barke</span>
+          <img
+            src="logo.jpg"
+            width="75px"
+            height="75px"
+            align="center"
+            alt="logo"
+            style={{ padding: "5px" }}
+          />
+          <span>&copy;by maleri$h and Barke</span>
         </div>
       </footer>
     </div>
