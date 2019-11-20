@@ -52,7 +52,6 @@ export const query = graphql`
 `
 
 export const FeaturedProduct = ({ props }) => {
-  console.log(props)
   return <div></div>
 }
 
