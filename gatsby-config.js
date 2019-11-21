@@ -6,18 +6,25 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Web-shop',
+    title: "Web-shop",
     categories: [
       {
-        name: 'Tehnika'
+        id: 1,
+        name: "Tehnika",
       },
       {
-        name: 'Namjestaj'
+        id: 2,
+        name: "Namjestaj",
       },
       {
-        name: 'Razno'
-      }
-    ]
+        id: 3,
+        name: "Razno",
+      },
+      {
+        id: 4,
+        name: "Sportska oprema",
+      },
+    ],
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -26,15 +33,15 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/src`
+        path: `${__dirname}/src`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/content`
+        path: `${__dirname}/content`,
       },
     },
-  ]
+  ],
 }

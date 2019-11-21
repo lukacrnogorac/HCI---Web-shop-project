@@ -57,8 +57,8 @@ export const Layout = ({ children }) => (
     >
       <img
         src="logo.jpg"
-        width="75px"
-        height="75px"
+        width="60px"
+        height="60px"
         align="center"
         alt="logo"
         style={{ padding: "5px" }}
@@ -101,8 +101,8 @@ export const Layout = ({ children }) => (
         >
           <img
             src="logo.jpg"
-            width="75px"
-            height="75px"
+            width="60px"
+            height="60px"
             align="center"
             alt="logo"
             style={{ padding: "5px" }}

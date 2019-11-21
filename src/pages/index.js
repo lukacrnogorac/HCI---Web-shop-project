@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
 import Img from "gatsby-image"
+import { Card, ListGroup, ListGroupItem } from "react-bootstrap"
 
 const IndexPage = ({ data }) => (
   <div>
@@ -52,8 +53,35 @@ export const query = graphql`
   }
 `
 
-export const FeaturedProduct = ({ props }) => {
-  return <div></div>
+export const FeaturedProduct = ({ featuredProduct }) => {
+  return (
+    <div className="featuredProduct">
+      <Card style={{ width: "18rem" }}>
+        <Img
+          key={featuredProduct.node.id}
+          fluid={featuredProduct.node.childImageSharp.fluid}
+          className="customImage"
+          style={{ height: "250px", width: "250px" }}
+        />
+        <Card.Body>
+          <Card.Title>Card Title</Card.Title>
+          <Card.Text>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </Card.Text>
+        </Card.Body>
+        <ListGroup className="list-group-flush">
+          <ListGroupItem>Cras justo odio</ListGroupItem>
+          <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+          <ListGroupItem>Vestibulum at eros</ListGroupItem>
+        </ListGroup>
+        <Card.Body>
+          <Card.Link href="#">Card Link</Card.Link>
+          <Card.Link href="#">Another Link</Card.Link>
+        </Card.Body>
+      </Card>
+    </div>
+  )
 }
 
 export const FeaturedCategory = () => {
