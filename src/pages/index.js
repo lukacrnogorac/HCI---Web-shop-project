@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
 import Img from "gatsby-image"
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap"
+import { Card, Button } from "react-bootstrap"
 
 const IndexPage = ({ data }) => (
   <div>
@@ -11,7 +11,11 @@ const IndexPage = ({ data }) => (
       <Sidebar />
       <div className="content">
         <FeaturedProduct featuredProduct={data.allFile.edges[0]} />
-        <FeaturedCategory featuredCategories={data.allFile.edges} />
+        <FeaturedCategory
+          featuredCategories={
+            data.allFile.edges /* create query for featuredCategory.. */
+          }
+        />
         {data.allFile.edges.map(({ node }) => {
           return (
             <div
@@ -55,28 +59,48 @@ export const query = graphql`
 
 export const FeaturedProduct = ({ featuredProduct }) => {
   return (
-    <Card style={{}}>
+    <Card style={{ display: "grid", gridTemplateColumns: "0.5fr 1fr" }}>
       <Img
         key={featuredProduct.node.id}
         fluid={featuredProduct.node.childImageSharp.fluid}
         className="customImage"
-        style={{ height: "250px", width: "250px" }}
+        style={{
+          height: "280px",
+          width: "280px",
+          margin: "7.5px",
+          border: "1px solid black",
+        }}
       />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+      <Card.Body
+        style={{ display: "grid", gridTemplateRows: "0.2fr 0.8fr 0.2fr" }}
+      >
+        <Card.Title>Featured Product</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          This is our main product of this month. We offer you great deal if you
+          take this product from our company. This is our main product of this
+          month. We offer you great deal if you take this product from our This
+          is our main product of this month. We offer you great deal if you take
+          this product from our company. This is our main product of this month.
+          We offer you great deal if you take this product from our This is our
+          main product of this month. We offer you great deal if you take this
+          product from our company. This is our main product of this month. We
+          offer you great deal if you take this product from our This is our
+          main product of this month. We offer you great deal if you take this
+          product from our company.
         </Card.Text>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroupItem>Cras justo odio</ListGroupItem>
-        <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-        <ListGroupItem>Vestibulum at eros</ListGroupItem>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
+        <div
+          className="something"
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+          }}
+        >
+          <Card.Subtitle>XX.XX€</Card.Subtitle>
+          <Button variant="secondary" style={{}}>
+            Purchase
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   )
