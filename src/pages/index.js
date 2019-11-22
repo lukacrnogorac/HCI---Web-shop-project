@@ -13,25 +13,12 @@ const IndexPage = ({ data }) => (
         <FeaturedProduct featuredProduct={data.allFile.edges[0]} />
         <FeaturedCategory
           featuredCategories={
-            data.allFile.edges /* create query for featuredCategory.. */
+            [
+              data.allFile.edges[1],
+              data.allFile.edges[2],
+            ] /* create query for featuredCategory.. */
           }
         />
-        {data.allFile.edges.map(({ node }) => {
-          return (
-            <div
-              className="item"
-              key={node.id}
-              style={{ marginBottom: "0.2px", borderBottom: "1px solid black" }}
-            >
-              <Img
-                key={node.id}
-                fluid={node.childImageSharp.fluid}
-                className="customImage"
-                style={{ height: "250px", width: "250px" }}
-              />
-            </div>
-          )
-        })}
       </div>
       <div></div>
     </Layout>
@@ -65,8 +52,8 @@ export const FeaturedProduct = ({ featuredProduct }) => {
         fluid={featuredProduct.node.childImageSharp.fluid}
         className="customImage"
         style={{
-          height: "280px",
-          width: "280px",
+          height: "360px",
+          width: "520px",
           margin: "7.5px",
           border: "1px solid black",
         }}
@@ -89,7 +76,7 @@ export const FeaturedProduct = ({ featuredProduct }) => {
           product from our company.
         </Card.Text>
         <div
-          className="something"
+          className="productInformations"
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -106,6 +93,64 @@ export const FeaturedProduct = ({ featuredProduct }) => {
   )
 }
 
-export const FeaturedCategory = () => {
-  return <div></div>
+export const FeaturedCategory = ({ featuredCategories }) => {
+  //borders add for orientation
+  return (
+    <Card
+      style={{
+        display: "grid",
+        gridTemplateRows: "0.1fr 0.3fr 0.3fr",
+        border: "2px solid blue",
+      }}
+    >
+      <Card.Title>Featured Category</Card.Title>
+      {featuredCategories.map(({ node }) => {
+        return (
+          <Card.Body
+            style={{
+              display: "grid",
+              gridTemplateColumns: "0.2fr 1fr",
+              border: "1px solid green",
+              marginBottom: "12.5px",
+            }}
+          >
+            <Img
+              key={node.id}
+              fluid={node.childImageSharp.fluid}
+              className="customImage"
+              style={{
+                height: "160px",
+                width: "280px",
+                margin: "7.5px",
+                border: "1px solid black",
+              }}
+            />
+            <div
+              className="secondPart"
+              style={{
+                display: "grid",
+                gridTemplateRows: "0.5fr 0.47fr",
+                marginLeft: "7.5px",
+              }}
+            >
+              <Card.Title>Product</Card.Title>
+              <div
+                className="productInformations"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "flex-end",
+                }}
+              >
+                <Card.Subtitle>XX.XX€</Card.Subtitle>
+                <Button variant="secondary" style={{}}>
+                  Purchase
+                </Button>
+              </div>
+            </div>
+          </Card.Body>
+        )
+      })}
+    </Card>
+  )
 }
