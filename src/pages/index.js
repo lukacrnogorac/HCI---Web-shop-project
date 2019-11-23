@@ -107,6 +107,7 @@ export const FeaturedCategory = ({ featuredCategories }) => {
       {featuredCategories.map(({ node }) => {
         return (
           <Card.Body
+            key={node.id}
             style={{
               display: "grid",
               gridTemplateColumns: "0.2fr 1fr",

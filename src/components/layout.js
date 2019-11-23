@@ -70,7 +70,15 @@ export const Layout = ({ children }) => (
         <FormControl placeholder="Search for product" />
       </InputGroup>
     </div>
-    <div id="container" style={{ position: "relative", minHeight: "100vh" }}>
+    <div
+      id="container"
+      style={{
+        position: "relative",
+        minHeight: "100vh",
+        width: "90%",
+        margin: "0 auto",
+      }}
+    >
       <div
         id="mainContent"
         style={{
