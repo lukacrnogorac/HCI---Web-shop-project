@@ -1,5 +1,4 @@
 import React from "react"
-import { Nav, Button, InputGroup, FormControl } from "react-bootstrap"
 
 export const Footer = ({ children }) => (
 <footer
