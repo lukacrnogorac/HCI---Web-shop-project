@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/layout_sidebar"
 import Sidebar from "../components/sidebar"
 import Img from "gatsby-image"
 import { Card, Button } from "react-bootstrap"

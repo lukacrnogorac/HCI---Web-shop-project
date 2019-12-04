@@ -82,8 +82,8 @@ export const Layout = ({ children }) => (
       <div
         id="mainContent"
         style={{
-         // display: "flex",
-         // gridTemplateColumns: "210px 1fr",
+          display: "grid",
+          gridTemplateColumns: "210px 1fr",
           paddingBottom: "60px",
         }}
       >
