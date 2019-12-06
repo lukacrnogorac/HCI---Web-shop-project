@@ -7,7 +7,6 @@ import Img from "gatsby-image"
 const News = ({ data }) => (
   <div>
     <Layout>
-      <div className="something"></div>
       <div className="newsContent" style={{ margin: "10px" }}>
         <h1>News</h1>
         {data.allFile.edges.map(({ node }) => {
@@ -20,7 +19,7 @@ const News = ({ data }) => (
                 className="singleNewsItem"
                 style={{ border: "1px solid black" }}
               >
-                <h4 className="newsTitle">Title</h4>
+                <h4 className="newsTitle">{node.id}</h4>
                 <p className="newsParagraph">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's

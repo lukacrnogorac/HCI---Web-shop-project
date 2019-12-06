@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/layout_with_sidebar"
 import Sidebar from "../components/sidebar"
 import Img from "gatsby-image"
 import { Card, Button } from "react-bootstrap"
 
 //created a kind of version page, we need to modify and fix up it
-
+//ask Cagalj for queries
 const IndexPage = ({ data }) => (
   <div>
     <Layout>
