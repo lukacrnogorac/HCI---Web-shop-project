@@ -5,8 +5,6 @@ import Sidebar from "../components/sidebar"
 import Img from "gatsby-image"
 import { Card, Button } from "react-bootstrap"
 
-//created a kind of version page, we need to modify and fix up it
-//ask Cagalj for queries
 const IndexPage = ({ data }) => (
   <div>
     <Layout>
@@ -108,7 +106,6 @@ export const FeaturedProduct = ({ featuredProduct }) => {
 }
 
 export const FeaturedCategoryVertical = ({ featuredCategories }) => {
-  console.log(featuredCategories)
   //borders add for orientation
   return (
     <Card
