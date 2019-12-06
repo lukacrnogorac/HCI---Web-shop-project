@@ -1,11 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/layout_with_sidebar"
 import Sidebar from "../components/sidebar"
 import Img from "gatsby-image"
 import { Card, Button } from "react-bootstrap"
-
-//created a kind of version page, we need to modify and fix up it
 
 const IndexPage = ({ data }) => (
   <div>
@@ -108,7 +106,6 @@ export const FeaturedProduct = ({ featuredProduct }) => {
 }
 
 export const FeaturedCategoryVertical = ({ featuredCategories }) => {
-  console.log(featuredCategories)
   //borders add for orientation
   return (
     <Card

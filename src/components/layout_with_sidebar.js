@@ -4,7 +4,7 @@ import Footer from "../components/footer.js"
 
 export const Layout = ({ children }) => (
   <div>
-    <Header />
+    <Header/>
     <div
       id="container"
       style={{
@@ -14,10 +14,17 @@ export const Layout = ({ children }) => (
         margin: "0 auto",
       }}
     >
-      <div id="mainContent" style={{ paddingBottom: "60px" }}>
+      <div
+        id="mainContent"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "210px 1fr",
+          paddingBottom: "60px",
+        }}
+      >
         {children}
       </div>
-      <Footer />
+      <Footer/>
     </div>
   </div>
 )
