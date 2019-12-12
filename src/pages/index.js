@@ -36,38 +36,24 @@ const IndexPage = ({ data }) => (
 
 export default IndexPage
 
-export const query = graphql`
-  {
-    allFile(
-      filter: { absolutePath: { regex: "//content/images//" } }
-      limit: 4
-    ) {
-      edges {
-        node {
-          id
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
 export const FeaturedProduct = ({ featuredProduct }) => {
   return (
-    <Card style={{ display: "grid", gridTemplateColumns: "0.5fr 1fr" }}>
+    <Card
+      style={{
+        display: "grid",
+        gridTemplateColumns: "0.5fr 1fr",
+        margin: "12.5px 0px 12.5px 5px",
+      }}
+    >
       <Img
         key={featuredProduct.node.id}
         fluid={featuredProduct.node.childImageSharp.fluid}
         className="customImage"
         style={{
-          height: "360px",
-          width: "520px",
+          maxHeight: "360px",
+          maxWidth: "520px",
           margin: "7.5px",
-          border: "1px solid black",
+          borderRadius: "0.5rem",
         }}
       />
       <Card.Body
@@ -132,10 +118,10 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
               fluid={node.childImageSharp.fluid}
               className="customImage"
               style={{
-                height: "160px",
-                width: "280px",
+                maxHeight: "160px",
+                maxWidth: "280px",
                 margin: "7.5px",
-                border: "1px solid black",
+                borderRadius: "0.5rem",
               }}
             />
             <div
@@ -191,14 +177,13 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
                 border: "1px solid black",
                 marginRight: "15px",
               }}
+              key={node.id}
             >
               <Img
-                key={node.id}
                 fluid={node.childImageSharp.fluid}
                 className="customImage"
                 style={{
-                  border: "1px solid black",
-                  height: "220px",
+                  maxHeight: "220px",
                 }}
               />
               <Card.Body>
@@ -215,3 +200,23 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
     </Card>
   )
 }
+
+export const query = graphql`
+  {
+    allFile(
+      filter: { absolutePath: { regex: "//content/images/real_images//" } }
+      limit: 4
+    ) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  }
+`

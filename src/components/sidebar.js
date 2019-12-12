@@ -36,7 +36,7 @@ const Sidebar = () => {
               action
               variant="secondary"
               key={category.id}
-              style={{ margin: "5px 0px 5px 0px" }}
+              style={{ margin: "5px 0px 5px 0px", borderRadius: "0.25rem" }}
             >
               {category.name}
             </ListGroup.Item>

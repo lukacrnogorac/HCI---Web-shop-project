@@ -14,6 +14,7 @@ const News = ({ data }) => (
             <div
               className="newsItem"
               style={{ display: "inline-flex", margin: "2.5px 5px 2.5px 5px" }}
+              key={node.id}
             >
               <div
                 className="singleNewsItem"

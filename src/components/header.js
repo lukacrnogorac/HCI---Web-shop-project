@@ -2,13 +2,15 @@ import React from "react"
 import { Nav, Button, InputGroup, FormControl } from "react-bootstrap"
 
 export const Header = ({ children }) => (
-<div className="navigation">
+  <div
+    className="navigation"
+    style={{ margin: "0 auto", width: "90%", backgroundColor: "white" }}
+  >
     <div
       className="header"
       style={{
         display: "flex",
         justifyContent: "space-between",
-        margin: "4px",
       }}
     >
       <Nav variant="pills" defaultActiveKey="/">
@@ -70,7 +72,7 @@ export const Header = ({ children }) => (
         <FormControl placeholder="Search for product" />
       </InputGroup>
     </div>
-    </div>
+  </div>
 )
-    
+
 export default Header

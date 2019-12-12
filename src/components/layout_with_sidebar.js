@@ -3,8 +3,8 @@ import Header from "../components/header.js"
 import Footer from "../components/footer.js"
 
 export const Layout = ({ children }) => (
-  <div>
-    <Header/>
+  <div style={{ background: "whitesmoke" }}>
+    <Header />
     <div
       id="container"
       style={{
@@ -24,7 +24,7 @@ export const Layout = ({ children }) => (
       >
         {children}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   </div>
 )

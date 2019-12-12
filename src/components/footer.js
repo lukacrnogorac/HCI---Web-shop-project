@@ -9,6 +9,7 @@ export const Footer = ({ children }) => (
       width: "100%",
       height: "60px",
       borderTop: "1px solid lightgrey",
+      backgroundColor: "white",
     }}
   >
     <div

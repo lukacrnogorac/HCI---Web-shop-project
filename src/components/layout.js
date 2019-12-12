@@ -3,7 +3,7 @@ import Header from "../components/header.js"
 import Footer from "../components/footer.js"
 
 export const Layout = ({ children }) => (
-  <div>
+  <div style={{ backgroundColor: "whitesmoke" }}>
     <Header />
     <div
       id="container"
@@ -14,7 +14,7 @@ export const Layout = ({ children }) => (
         margin: "0 auto",
       }}
     >
-      <div id="mainContent" style={{ paddingBottom: "60px" }}>
+      <div id="mainContent" style={{ marginBottom: "60px" }}>
         {children}
       </div>
       <Footer />
