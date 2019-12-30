@@ -20,6 +20,8 @@ const About = ({ data }) => {
                   style={{
                     height: "400px",
                     width: "400px",
+                    borderRadius: "5px",
+                    border: "1px solid rgba(0, 0, 0, 0.125)"
                   }}
                 />
                 <Carousel.Caption>
@@ -30,13 +32,11 @@ const About = ({ data }) => {
             )
           })}
         </Carousel>
-        <div id="body-layout">
+        <div id="body-layout" style={{backgroundColor: "white", borderRadius: "5px", margin: "10px 0px", minHeight: "500px", display: "flex", border: "1px solid rgba(0, 0, 0, 0.125)"}}>
           <h2
             id="title"
             style={{
-              marginBottom: 20,
-              paddingLeft: "1.25rem",
-              marginTop: "2.5rem",
+              margin: "10px",
             }}
           >
             Buy stuff, would ya?
@@ -52,8 +52,8 @@ const About = ({ data }) => {
             {aboutCards.siteMetadata.aboutData.map(
               ({ id, title, description }) => {
                 return (
-                  <Card key={id} style={{ border: "none" }}>
-                    <Card.Body>
+                  <Card key={id} style={{ border: "none", margin: "10px"}}>
+                    <Card.Body style={{padding: "0px"}}>
                       <Card.Title>{title}</Card.Title>
                       <Card.Text>{description}</Card.Text>
                     </Card.Body>
@@ -98,17 +98,3 @@ export const query = graphql`
     }
   }
 `
-
-export const Jumbotron = ({ Jimage }) => {
-  return (
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Fluid jumbotron</h1>
-        <p class="lead">
-          This is a modified jumbotron that occupies the entire horizontal space
-          of its parent.
-        </p>
-      </div>
-    </div>
-  )
-}

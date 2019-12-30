@@ -3,7 +3,7 @@ import Header from "../components/header.js"
 import Footer from "../components/footer.js"
 
 export const Layout = ({ children }) => (
-  <div>
+  <div style={{backgroundColor: "#EAEDED"}}>
     <Header/>
     <div
       id="container"
@@ -18,7 +18,7 @@ export const Layout = ({ children }) => (
         id="mainContent"
         style={{
           display: "grid",
-          gridTemplateColumns: "210px 1fr",
+          gridTemplateColumns: "260px 1fr",
           paddingBottom: "60px",
         }}
       >

@@ -3,7 +3,7 @@ import Header from "../components/header.js"
 import Footer from "../components/footer.js"
 
 export const Layout = ({ children }) => (
-  <div>
+  <div style={{backgroundColor: "#EAEDED"}}>
     <Header />
     <div
       id="container"

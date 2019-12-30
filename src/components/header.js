@@ -2,42 +2,42 @@ import React from "react"
 import { Nav, Button, InputGroup, FormControl } from "react-bootstrap"
 
 export const Header = ({ children }) => (
-<div className="navigation">
+<div className="navigation" style={{backgroundColor: "#28395c", marginBottom: "10px"}}>
     <div
       className="header"
       style={{
         display: "flex",
         justifyContent: "space-between",
-        margin: "4px",
+        padding: "4px",
       }}
     >
       <Nav variant="pills" defaultActiveKey="/">
         <Nav.Item>
-          <Nav.Link href="/" eventKey="Home">
+          <Nav.Link href="/" eventKey="Home" style={{color: "white"}}>
             Home
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="About" href="/about">
+          <Nav.Link eventKey="About" href="/about" style={{color: "white"}}>
             About
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="News" href="/news">
+          <Nav.Link eventKey="News" href="/news" style={{color: "white"}}>
             News
           </Nav.Link>
         </Nav.Item>
       </Nav>
-      <Nav className="justify-content-end" style={{ marginRight: "15px" }}>
+      <Nav className="justify-content-end" style={{ marginRight: "10px" }}>
         <Nav.Item>
-          <Button variant="outline-primary" style={{ width: "110px" }}>
+          <Button variant="secondary" style={{ width: "110px", backgroundColor: "#203765", borderColor: "#152442" }}>
             Log in
           </Button>
         </Nav.Item>
         <Nav.Item>
           <Button
             variant="primary"
-            style={{ marginLeft: "40px", width: "110px" }}
+            style={{ marginLeft: "10px", width: "110px", backgroundColor: "#203765", borderColor: "#152442" }}
           >
             Register
           </Button>
@@ -48,24 +48,21 @@ export const Header = ({ children }) => (
       className="logoSearch"
       style={{
         display: "flex",
-        height: "10vh",
+        height: "7vh",
         justifyContent: "center",
         alignItems: "center",
-        borderTop: "1px solid black",
-        borderBottom: "1px solid black",
       }}
     >
       <img
         src="logo.jpg"
         width="60px"
         height="60px"
-        align="center"
         alt="logo"
         style={{ padding: "5px" }}
       />
       <InputGroup
         className="mb-3"
-        style={{ marginLeft: "5px", width: "250px" }}
+        style={{ marginLeft: "5px", width: "250px"}}
       >
         <FormControl placeholder="Search for product" />
       </InputGroup>

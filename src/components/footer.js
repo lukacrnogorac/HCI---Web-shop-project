@@ -8,27 +8,26 @@ export const Footer = ({ children }) => (
       bottom: 0,
       width: "100%",
       height: "60px",
-      borderTop: "1px solid lightgrey",
+      borderTop: "1px solid rgba(0, 0, 0, 0.125)",
+      borderLeft: "1px solid rgba(0, 0, 0, 0.125)",
+      borderRight: "1px solid rgba(0, 0, 0, 0.125)",
+      backgroundColor: "white",
+      borderRadius: "5px 5px 0px 0px",
+      display: "flex",
+      justifyContent: "space-between",
     }}
   >
-    <div
-      className="footer-copyright text-center py-3"
-      style={{
-        height: "20px",
-        display: "flex",
-        justifyContent: "space-between",
-      }}
-    >
+    
       <img
         src="logo.jpg"
         width="60px"
         height="60px"
         align="center"
         alt="logo"
-        style={{ padding: "5px" }}
+        style={{ margin: "0px 5px" }}
       />
-      <span>&copy;by maleri$h and Barke</span>
-    </div>
+      <span style={{alignSelf: "center", margin: "0px 5px"}}>&copy;by maleri$h and Barke</span>
+    
   </footer>
 )
 
