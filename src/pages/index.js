@@ -4,6 +4,7 @@ import Layout from "../components/layout_with_sidebar"
 import Sidebar from "../components/sidebar"
 import Img from "gatsby-image"
 import { Card, Button } from "react-bootstrap"
+import "../styles/index.css"
 
 const IndexPage = ({ data }) => (
   <div>
@@ -58,21 +59,19 @@ export const query = graphql`
 
 export const FeaturedProduct = ({ featuredProduct }) => {
   return (
-    <Card style={{ display: "grid", gridTemplateColumns: "0.5fr 1fr", margin: "0px 10px 10px" }}>
+    <Card id="featuredProduct" style={{  }}>
       <Img
         key={featuredProduct.node.id}
         fluid={featuredProduct.node.childImageSharp.fluid}
         className="customImage"
         style={{
-          height: "360px",
-          width: "520px",
           margin: "10px",
           borderRadius: "5px",
           alignSelf: "center"
         }}
       />
       <Card.Body
-        style={{ display: "grid", gridTemplateRows: "0.2fr 0.8fr 0.2fr", margin: "10px 10px 10px 0px", padding: "0px" }}
+        style={{ display: "grid", gridTemplateRows: "0.2fr 0.8fr 0.2fr", padding: "0px" }}
       >
         <Card.Title>Featured Product</Card.Title>
         <Card.Text>

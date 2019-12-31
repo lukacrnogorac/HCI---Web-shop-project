@@ -10,11 +10,10 @@ export const Layout = ({ children }) => (
       style={{
         position: "relative",
         minHeight: "100vh",
-        width: "90%",
         margin: "0 auto",
       }}
     >
-      <div id="mainContent" style={{ paddingBottom: "60px" }}>
+      <div id="mainContent" style={{ paddingBottom: "60px",  gridTemplateColumns: "1fr" }}>
         {children}
       </div>
       <Footer />

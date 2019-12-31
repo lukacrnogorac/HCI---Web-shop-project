@@ -23,7 +23,7 @@ const Sidebar = () => {
       style={{
         backgroundColor: "white",
         padding: "0px 10px 10px",
-        margin: "0px 0px 10px 10px",
+        
         borderRadius: "5px",
         border: "1px solid rgba(0, 0, 0, 0.125)"
       }}
@@ -37,7 +37,7 @@ const Sidebar = () => {
               action
               variant="secondary"
               key={category.id}
-              style={{ margin: "5px 0px 5px 0px", borderRadius: "5px" }}
+              style={{ margin: "5px 0px 5px 0px", borderRadius: "5px", display: "flex", justifyContent: "center" }}
             >
               {category.name}
             </ListGroup.Item>
