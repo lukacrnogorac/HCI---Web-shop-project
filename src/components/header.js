@@ -58,7 +58,7 @@ export const Header = ({ children }) => (
         width="60px"
         height="60px"
         alt="logo"
-        style={{ padding: "5px" }}
+        style={{ padding: "5px", borderRadius: "50%" }}
       />
       <InputGroup
         className="mb-3"
