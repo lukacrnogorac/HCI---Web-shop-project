@@ -4,7 +4,7 @@ import Footer from "../components/footer.js"
 import "../styles/layout_with_sidebar.css"
 
 export const Layout = ({ children }) => (
-  <div style={{backgroundColor: "#EAEDED"}}>
+  <div id="biggestContainer" style={{backgroundColor: "#EAEDED"}}>
     <Header/>
     <div
       id="container"

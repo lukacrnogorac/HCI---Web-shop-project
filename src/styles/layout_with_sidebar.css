@@ -1,7 +1,11 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     #container{
-        width: 480px;
+        min-width: 480px;
+    }
+
+    #biggestContainer{
+        min-width: 480px;
     }
 }
 
