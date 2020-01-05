@@ -1,34 +1,53 @@
 import React from "react"
 import { Nav, Button, InputGroup, FormControl } from "react-bootstrap"
+import "../styles/header.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome, faNewspaper, faAddressCard } from '@fortawesome/free-solid-svg-icons'
 
 export const Header = ({ children }) => (
-<div className="navigation" style={{backgroundColor: "#28395c", marginBottom: "10px"}}>
-    <div
-      className="header"
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "4px",
-      }}
-    >
-      <Nav variant="pills" defaultActiveKey="/">
-        <Nav.Item>
-          <Nav.Link href="/" eventKey="Home" style={{color: "white"}}>
-            Home
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="About" href="/about" style={{color: "white"}}>
-            About
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="News" href="/news" style={{color: "white"}}>
-            News
-          </Nav.Link>
-        </Nav.Item>
+<div className="navigation" style={{backgroundColor: "#28395c", height:"50px", marginBottom: "10px", display:"flex", justifyContent:"space-between"}}>
+  <div className="header-left" style={{display: "flex"}}>
+    <Nav.Link href="/" style={{padding:"0px"}}>
+    <img
+          src="logo.jpg"
+          width="50px"
+          height="50px"
+          alt="logo"
+          style={{ padding: "5px", borderRadius: "50%" }}
+      />
+    </Nav.Link>
+    <Nav variant="pills" defaultActiveKey="/">
+          <Nav.Item>
+            <Nav.Link href="/" eventKey="Home" style={{color: "white", height: "50px", padding:"0px 20px", display:"flex", alignItems:"center"}}>
+              <div id="homeText">Home</div>
+              <FontAwesomeIcon id="homeIcon" icon={faHome} />
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="About" href="/about" style={{color: "white", height: "50px", padding:"0px 20px", display:"flex", alignItems:"center"}}>
+            <div id="aboutText">About</div>
+              <FontAwesomeIcon id="aboutIcon" icon={faAddressCard} />
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="News" href="/news" style={{color: "white", height: "50px", padding:"0px 20px", display:"flex", alignItems:"center"}}>
+            <div id="newsText">News</div>
+              <FontAwesomeIcon id="newsIcon" icon={faNewspaper} />
+            </Nav.Link>
+          </Nav.Item>
       </Nav>
-      <Nav className="justify-content-end" style={{ marginRight: "10px" }}>
+  </div>
+  <div className="header-middle" style={{display:"flex", alignItems:"center"}}>
+    <div className="searchbar" style={{height:"38px"}}>
+      <InputGroup
+          className="mb-3"
+        >
+          <FormControl placeholder="Search for product" />
+      </InputGroup>
+    </div>
+  </div>
+  <div className="header-right" style={{display: "flex", alignItems: "center"}}>
+    <Nav style={{margin:"0px 10px"}}>
         <Nav.Item>
           <Button variant="secondary" style={{ width: "110px", backgroundColor: "#203765", borderColor: "#152442" }}>
             Log in
@@ -43,31 +62,8 @@ export const Header = ({ children }) => (
           </Button>
         </Nav.Item>
       </Nav>
-    </div>
-    <div
-      className="logoSearch"
-      style={{
-        display: "flex",
-        height: "7vh",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <img
-        src="logo.jpg"
-        width="60px"
-        height="60px"
-        alt="logo"
-        style={{ padding: "5px", borderRadius: "50%" }}
-      />
-      <InputGroup
-        className="mb-3"
-        style={{ marginLeft: "5px", width: "250px"}}
-      >
-        <FormControl placeholder="Search for product" />
-      </InputGroup>
-    </div>
-    </div>
+  </div>
+</div>
 )
     
 export default Header
