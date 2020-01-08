@@ -37,26 +37,6 @@ const IndexPage = ({ data }) => (
 
 export default IndexPage
 
-export const query = graphql`
-  {
-    allFile(
-      filter: { absolutePath: { regex: "//content/images//" } }
-      limit: 4
-    ) {
-      edges {
-        node {
-          id
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
 export const FeaturedProduct = ({ featuredProduct }) => {
   return (
     <Card id="featuredProduct" style={{}}>
@@ -203,7 +183,6 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
               key={node.id}
             >
               <Img
-                key={node.id}
                 fluid={node.childImageSharp.fluid}
                 className="customImage"
                 style={{
@@ -224,3 +203,23 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
     </Card>
   )
 }
+
+export const query = graphql`
+  {
+    allFile(
+      filter: { absolutePath: { regex: "//content/images/real_images//" } }
+      limit: 4
+    ) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  }
+`

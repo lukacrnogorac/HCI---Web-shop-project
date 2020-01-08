@@ -35,6 +35,33 @@ export const Header = ({ children }) => (
               <FontAwesomeIcon id="newsIcon" icon={faNewspaper} />
             </Nav.Link>
           </Nav.Item>
+  <div
+    className="navigation"
+    style={{ margin: "0 auto", width: "90%", backgroundColor: "white" }}
+  >
+    <div
+      className="header"
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+      }}
+    >
+      <Nav variant="pills" defaultActiveKey="/">
+        <Nav.Item>
+          <Nav.Link href="/" eventKey="Home">
+            Home
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="About" href="/about">
+            About
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="News" href="/news">
+            News
+          </Nav.Link>
+        </Nav.Item>
       </Nav>
   </div>
   <div className="header-middle" style={{display:"flex", alignItems:"center"}}>
@@ -64,6 +91,34 @@ export const Header = ({ children }) => (
       </Nav>
   </div>
 </div>
+    </div>
+    <div
+      className="logoSearch"
+      style={{
+        display: "flex",
+        height: "10vh",
+        justifyContent: "center",
+        alignItems: "center",
+        borderTop: "1px solid black",
+        borderBottom: "1px solid black",
+      }}
+    >
+      <img
+        src="logo.jpg"
+        width="60px"
+        height="60px"
+        align="center"
+        alt="logo"
+        style={{ padding: "5px" }}
+      />
+      <InputGroup
+        className="mb-3"
+        style={{ marginLeft: "5px", width: "250px" }}
+      >
+        <FormControl placeholder="Search for product" />
+      </InputGroup>
+    </div>
+  </div>
 )
-    
+
 export default Header
