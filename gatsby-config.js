@@ -11,18 +11,22 @@ module.exports = {
       {
         id: 1,
         name: "Tehnika",
+        folderName: "technique",
       },
       {
         id: 2,
         name: "Namjestaj",
+        folderName: "furniture",
       },
       {
         id: 3,
         name: "Razno",
+        folderName: "various",
       },
       {
         id: 4,
         name: "Sportska oprema",
+        folderName: "sports",
       },
     ],
     aboutData: [

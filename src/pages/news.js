@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/layout.js"
 import { Button } from "react-bootstrap"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -8,17 +8,16 @@ const News = ({ data }) => (
   <div>
     <Layout>
       <div className="newsContent" style={{ margin: "10px" }}>
-        <h1>News</h1>
+        <h1 style={{marginBottom: "5px"}}>News</h1>
         {data.allFile.edges.map(({ node }) => {
           return (
             <div
               className="newsItem"
-              style={{ display: "inline-flex", margin: "2.5px 5px 2.5px 5px" }}
-              key={node.id}
+              style={{ display: "inline-flex", margin: "5px 0px", backgroundColor: "white", borderRadius: "5px", border: "1px solid rgba(0, 0, 0, 0.125)" }}
             >
               <div
                 className="singleNewsItem"
-                style={{ border: "1px solid black" }}
+                style={{ padding: "5px" }}
               >
                 <h4 className="newsTitle">{node.id}</h4>
                 <p className="newsParagraph">
@@ -29,7 +28,7 @@ const News = ({ data }) => (
                   specimen book.
                 </p>
                 <Button
-                  variant="outline-primary"
+                  variant="outline-secondary"
                   style={{ marginTop: "100px", width: "200px" }}
                 >
                   Read more
@@ -40,7 +39,7 @@ const News = ({ data }) => (
                   key={node.id}
                   fluid={node.childImageSharp.fluid}
                   className="img-fluid"
-                  style={{ height: "250px", width: "250px" }}
+                  style={{ height: "250px", width: "250px", borderRadius: "5px" }}
                 />
               </div>
             </div>

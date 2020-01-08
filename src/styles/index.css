@@ -1,0 +1,66 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #featuredProduct .customImage{
+        height: 240px;
+        width: 345px;
+    }
+
+    #featuredProduct .card-body{
+        margin: 10px;
+    }
+
+    #featuredProduct {
+        margin: 0px 10px 10px;
+    }
+
+    #sidebar{
+        margin: 0px 10px 10px;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #featuredProduct {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr;
+        margin: 0px 10px 10px;
+    }
+
+    #featuredProduct .card-body{
+        margin: 10px;
+    }
+
+    #featuredProduct .customImage{
+        height: 300px;
+        width: 432px;
+    }
+
+    #sidebar{
+        margin: 0px 10px 10px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #featuredProduct .customImage{
+        height: 360px;
+        width: 520px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #sidebar {
+        display: block;
+        margin: 0px 0px 10px 10px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #featuredProduct {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        grid-template-rows: 1fr;  
+        margin: 0px 10px 10px;
+    }
+}

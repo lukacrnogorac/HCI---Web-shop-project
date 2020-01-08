@@ -3,18 +3,17 @@ import Header from "../components/header.js"
 import Footer from "../components/footer.js"
 
 export const Layout = ({ children }) => (
-  <div style={{ backgroundColor: "whitesmoke" }}>
+  <div id="biggestContainer" style={{backgroundColor: "#EAEDED"}}>
     <Header />
     <div
       id="container"
       style={{
         position: "relative",
         minHeight: "100vh",
-        width: "90%",
         margin: "0 auto",
       }}
     >
-      <div id="mainContent" style={{ marginBottom: "60px" }}>
+      <div id="mainContent" style={{ paddingBottom: "60px",  gridTemplateColumns: "1fr" }}>
         {children}
       </div>
       <Footer />
