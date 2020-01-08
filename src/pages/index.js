@@ -59,7 +59,7 @@ export const query = graphql`
 
 export const FeaturedProduct = ({ featuredProduct }) => {
   return (
-    <Card id="featuredProduct" style={{  }}>
+    <Card id="featuredProduct" style={{}}>
       <Img
         key={featuredProduct.node.id}
         fluid={featuredProduct.node.childImageSharp.fluid}
@@ -67,11 +67,15 @@ export const FeaturedProduct = ({ featuredProduct }) => {
         style={{
           margin: "10px",
           borderRadius: "5px",
-          alignSelf: "center"
+          alignSelf: "center",
         }}
       />
       <Card.Body
-        style={{ display: "grid", gridTemplateRows: "0.2fr 0.8fr 0.2fr", padding: "0px" }}
+        style={{
+          display: "grid",
+          gridTemplateRows: "0.2fr 0.8fr 0.2fr",
+          padding: "0px",
+        }}
       >
         <Card.Title>Featured Product</Card.Title>
         <Card.Text>
@@ -95,8 +99,10 @@ export const FeaturedProduct = ({ featuredProduct }) => {
             alignItems: "flex-end",
           }}
         >
-          <Card.Subtitle style={{alignSelf: "bottom", padding: "6px 0px"}}>XX.XX€</Card.Subtitle>
-          <Button variant="secondary" style={{alignSelf: "bottom"}}>
+          <Card.Subtitle style={{ alignSelf: "bottom", padding: "6px 0px" }}>
+            XX.XX€
+          </Card.Subtitle>
+          <Button variant="secondary" style={{ alignSelf: "bottom" }}>
             Purchase
           </Button>
         </div>
@@ -112,10 +118,10 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
       style={{
         display: "grid",
         gridTemplateRows: "0.1fr 0.3fr 0.3fr",
-        margin: "10px"
+        margin: "10px",
       }}
     >
-      <Card.Title style={{margin: "10px"}}>Featured Category</Card.Title>
+      <Card.Title style={{ margin: "10px" }}>Featured Category</Card.Title>
       {featuredCategories.map(({ node }) => {
         return (
           <Card.Body
@@ -126,7 +132,7 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
               border: "1px solid rgba(0, 0, 0, 0.125)",
               margin: "0px 10px 10px 10px",
               padding: "0px",
-              borderRadius: "5px"
+              borderRadius: "5px",
             }}
           >
             <Img
@@ -156,8 +162,10 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
                   alignItems: "flex-end",
                 }}
               >
-                <Card.Text style={{padding: "6px 0px", margin: "0px"}}>XX.XX€</Card.Text>
-                <Button variant="secondary" style={{marginRight: "5px"}}>
+                <Card.Text style={{ padding: "6px 0px", margin: "0px" }}>
+                  XX.XX€
+                </Card.Text>
+                <Button variant="secondary" style={{ marginRight: "5px" }}>
                   Purchase
                 </Button>
               </div>
@@ -174,16 +182,16 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
     <Card
       style={{
         display: "grid",
-        margin: "10px"
+        margin: "10px",
       }}
     >
-      <Card.Title style={{margin:"10px"}}>Featured Category</Card.Title>
+      <Card.Title style={{ margin: "10px" }}>Featured Category</Card.Title>
       <Card.Body
         style={{
           display: "grid",
           gridTemplateColumns: "0.25fr 0.25fr 0.25fr 0.25fr",
           margin: "0px 5px 10px",
-          padding: "0px"
+          padding: "0px",
         }}
       >
         {featuredCategories.map(({ node }) => {
@@ -192,6 +200,7 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
               style={{
                 margin: "0px 5px",
               }}
+              key={node.id}
             >
               <Img
                 key={node.id}
@@ -201,7 +210,7 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
                   height: "220px",
                 }}
               />
-              <Card.Body style={{padding: "10px"}}>
+              <Card.Body style={{ padding: "10px" }}>
                 <Card.Title>Product</Card.Title>
                 <Card.Text>XX.XX€</Card.Text>
                 <Button variant="secondary" style={{ width: "100%" }}>

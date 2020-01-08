@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, navigate } from "gatsby"
 import { ListGroup } from "react-bootstrap"
 
 const Sidebar = () => {
@@ -10,6 +10,7 @@ const Sidebar = () => {
           categories {
             id
             name
+            folderName
           }
         }
       }
@@ -23,21 +24,35 @@ const Sidebar = () => {
       style={{
         backgroundColor: "white",
         padding: "0px 10px 10px",
-        
+
         borderRadius: "5px",
-        border: "1px solid rgba(0, 0, 0, 0.125)"
+        border: "1px solid rgba(0, 0, 0, 0.125)",
       }}
     >
       <h3 style={{ textAlign: "center" }}>Categories</h3>
       <ListGroup>
         {categories.map(category => {
+          const categoryModel = {
+            id: category.id,
+            folderName: category.folderName,
+          }
           return (
             <ListGroup.Item
               className="categoryItem"
               action
               variant="secondary"
+              onClick={() => {
+                navigate("/category", {
+                  state: { categoryModel },
+                })
+              }}
               key={category.id}
-              style={{ margin: "5px 0px 5px 0px", borderRadius: "5px", display: "flex", justifyContent: "center" }}
+              style={{
+                margin: "5px 0px 5px 0px",
+                borderRadius: "5px",
+                display: "flex",
+                justifyContent: "center",
+              }}
             >
               {category.name}
             </ListGroup.Item>

@@ -24,7 +24,7 @@ export const Footer = ({ children }) => (
         height="60px"
         align="center"
         alt="logo"
-        style={{ margin: "0px 5px" }}
+        style={{ margin: "0px 5px", padding: "5px", borderRadius: "50%" }}
       />
       <span style={{alignSelf: "center", margin: "0px 5px"}}>&copy;by maleri$h and Barke</span>
     
