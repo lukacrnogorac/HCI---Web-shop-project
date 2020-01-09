@@ -32,9 +32,8 @@ export const Category = ({ location }) => {
     <Layout>
       {data.map(({ node }) => {
         return (
-          <div>
+          <div key={node.id}>
             <Img
-              key={node.id}
               fluid={node.childImageSharp.fluid}
               className="customImage"
               style={{
