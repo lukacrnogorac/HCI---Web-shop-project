@@ -1,4 +1,5 @@
 import React from "react"
+import ourLogo from "../../content/logo.jpg"
 
 export const Footer = ({ children }) => (
   <footer
@@ -18,7 +19,7 @@ export const Footer = ({ children }) => (
     }}
   >
     <img
-      src="logo.jpg"
+      src={ourLogo}
       width="60px"
       height="60px"
       align="center"

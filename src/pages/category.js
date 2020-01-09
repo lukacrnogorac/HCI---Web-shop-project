@@ -4,27 +4,27 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 export const Category = ({ location }) => {
-  if (!location.state) {
-    return <Layout></Layout>
-  } else {
-    const categoryModel = location.state.categoryModel
-    let data = useStaticQuery(graphql`
-      {
-        allFile(filter: { absolutePath: { regex: "//content//" } }) {
-          edges {
-            node {
-              id
-              absolutePath
-              childImageSharp {
-                fluid(maxWidth: 400) {
-                  ...GatsbyImageSharpFluid_tracedSVG
-                }
+  let data = useStaticQuery(graphql`
+    {
+      allFile(filter: { absolutePath: { regex: "//content//" } }) {
+        edges {
+          node {
+            id
+            absolutePath
+            childImageSharp {
+              fluid(maxWidth: 400) {
+                ...GatsbyImageSharpFluid_tracedSVG
               }
             }
           }
         }
       }
-    `)
+    }
+  `)
+  if (!location.state) {
+    return <Layout></Layout>
+  } else {
+    const categoryModel = location.state.categoryModel
     data = data.allFile.edges
     data = data.filter(element => {
       if (element.node.absolutePath.includes(categoryModel.folderName)) {

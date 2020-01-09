@@ -8,6 +8,7 @@ import {
   faNewspaper,
   faAddressCard,
 } from "@fortawesome/free-solid-svg-icons"
+import ourLogo from "../../content/logo.jpg"
 
 export const Header = ({ children }) => (
   <div
@@ -23,7 +24,7 @@ export const Header = ({ children }) => (
     <div className="header-left" style={{ display: "flex" }}>
       <Nav.Link href="/" style={{ padding: "0px" }}>
         <img
-          src="logo.jpg"
+          src={ourLogo}
           width="50px"
           height="50px"
           alt="logo"
