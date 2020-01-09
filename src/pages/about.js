@@ -21,7 +21,7 @@ const About = ({ data }) => {
                     height: "400px",
                     width: "400px",
                     borderRadius: "5px",
-                    border: "1px solid rgba(0, 0, 0, 0.125)"
+                    border: "1px solid rgba(0, 0, 0, 0.125)",
                   }}
                 />
                 <Carousel.Caption>
@@ -32,7 +32,17 @@ const About = ({ data }) => {
             )
           })}
         </Carousel>
-        <div id="body-layout" style={{backgroundColor: "white", borderRadius: "5px", margin: "10px 0px", minHeight: "500px", display: "flex", border: "1px solid rgba(0, 0, 0, 0.125)"}}>
+        <div
+          id="body-layout"
+          style={{
+            backgroundColor: "white",
+            borderRadius: "5px",
+            margin: "10px 0px",
+            minHeight: "500px",
+            display: "flex",
+            border: "1px solid rgba(0, 0, 0, 0.125)",
+          }}
+        >
           <h2
             id="title"
             style={{
@@ -52,8 +62,8 @@ const About = ({ data }) => {
             {aboutCards.siteMetadata.aboutData.map(
               ({ id, title, description }) => {
                 return (
-                  <Card key={id} style={{ border: "none", margin: "10px"}}>
-                    <Card.Body style={{padding: "0px"}}>
+                  <Card key={id} style={{ border: "none", margin: "10px" }}>
+                    <Card.Body style={{ padding: "0px" }}>
                       <Card.Title>{title}</Card.Title>
                       <Card.Text>{description}</Card.Text>
                     </Card.Body>

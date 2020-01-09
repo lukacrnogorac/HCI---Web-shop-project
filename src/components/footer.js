@@ -17,17 +17,17 @@ export const Footer = ({ children }) => (
       justifyContent: "space-between",
     }}
   >
-    
-      <img
-        src="logo.jpg"
-        width="60px"
-        height="60px"
-        align="center"
-        alt="logo"
-        style={{ margin: "0px 5px", padding: "5px", borderRadius: "50%" }}
-      />
-      <span style={{alignSelf: "center", margin: "0px 5px"}}>&copy;by maleri$h and Barke</span>
-    
+    <img
+      src="logo.jpg"
+      width="60px"
+      height="60px"
+      align="center"
+      alt="logo"
+      style={{ margin: "0px 5px", padding: "5px", borderRadius: "50%" }}
+    />
+    <span style={{ alignSelf: "center", margin: "0px 5px" }}>
+      &copy;by maleri$h and Barke
+    </span>
   </footer>
 )
 
