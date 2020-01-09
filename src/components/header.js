@@ -1,4 +1,5 @@
 import React from "react"
+import { navigate } from "gatsby"
 import { Nav, Button, InputGroup, FormControl } from "react-bootstrap"
 import "../styles/header.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -98,6 +99,9 @@ export const Header = ({ children }) => (
         <Nav.Item>
           <Button
             variant="secondary"
+            onClick={() => {
+              navigate("/login")
+            }}
             style={{
               width: "110px",
               backgroundColor: "#203765",
