@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-const Category = ({ location }) => {
+export const Category = ({ location }) => {
   const categoryModel = location.state.categoryModel
   let data = useStaticQuery(graphql`
     {
