@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 const News = ({ data }) => (
   <div>
     <Layout>
-      <div className="newsContent" style={{ margin: "10px" }}>
+      <div className="newsContent" style={{ margin: "0px 10px" }}>
         <h1 style={{ marginBottom: "5px" }}>News</h1>
         {data.allFile.edges.map(({ node }) => {
           return (
@@ -15,7 +15,7 @@ const News = ({ data }) => (
               className="newsItem"
               style={{
                 display: "inline-flex",
-                margin: "5px 0px",
+                margin: "0px 0px 10px 0px",
                 backgroundColor: "white",
                 borderRadius: "5px",
                 border: "1px solid rgba(0, 0, 0, 0.125)",
