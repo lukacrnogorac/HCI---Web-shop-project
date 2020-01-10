@@ -1,7 +1,9 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/layout_with_sidebar.js"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import Sidebar from "../components/sidebar"
+import { Card, Button } from "react-bootstrap"
 
 export const Category = ({ location }) => {
   let data = useStaticQuery(graphql`
@@ -33,22 +35,53 @@ export const Category = ({ location }) => {
     })
     return (
       <Layout>
-        {data.map(({ node }) => {
-          return (
-            <div key={node.id}>
-              <Img
-                fluid={node.childImageSharp.fluid}
-                className="customImage"
+        <Sidebar />
+        <div className = "content" 
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            margin: "0px 10px 10px 10px", 
+            backgroundColor: "white", 
+            border: "1px solid rgba(0, 0, 0, 0.125", 
+            borderRadius: "5px"
+            }}>
+          <Card className = "searchbox" style={{height: "50px",  display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <Card.Title>Search</Card.Title>
+          </Card>
+          <div className = "productCards" style={{
+            display: "flex",
+            justifyContent: "center", 
+            flexWrap: "wrap",
+            padding: "5px"
+            }}>
+            {data.map(({ node }) => {
+              return (
+                <Card
                 style={{
-                  height: "160px",
-                  width: "280px",
-                  margin: "0px",
-                  borderRadius: "5px",
+                  margin: "5px",
+                  minWidth: "274px"
                 }}
-              />
-            </div>
-          )
-        })}
+                key={node.id}
+              >
+                <Img
+                  fluid={node.childImageSharp.fluid}
+                  className="customImage"
+                  style={{
+                    height: "220px",
+                  }}
+                />
+                <Card.Body style={{ padding: "10px" }}>
+                  <Card.Title>Product</Card.Title>
+                  <Card.Text>XX.XX€</Card.Text>
+                  <Button variant="secondary" style={{ width: "100%" }}>
+                    Purchase
+                  </Button>
+                </Card.Body>
+              </Card>
+              )
+            })}
+          </div>
+        </div>
       </Layout>
     )
   }
