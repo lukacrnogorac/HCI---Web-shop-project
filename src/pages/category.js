@@ -40,6 +40,7 @@ export const Category = ({ location }) => {
           style={{
             display: "flex",
             flexDirection: "column",
+            justifyContent: "center",
             margin: "0px 10px 10px 10px", 
             backgroundColor: "white", 
             border: "1px solid rgba(0, 0, 0, 0.125", 
@@ -48,19 +49,17 @@ export const Category = ({ location }) => {
           <Card className = "searchbox" style={{height: "50px",  display: "flex", justifyContent: "center", alignItems: "center"}}>
             <Card.Title>Search</Card.Title>
           </Card>
-          <div className = "productCards" style={{
-            display: "flex",
-            justifyContent: "center", 
-            flexWrap: "wrap",
-            padding: "5px"
+          <div className = "cardGrid" style={{
+            margin: "10px",
+            display: "grid",
+            gridGap: "10px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(274px, max-content))",
+            justifyContent: "center"
             }}>
             {data.map(({ node }) => {
               return (
                 <Card
-                style={{
-                  margin: "5px",
-                  minWidth: "274px"
-                }}
+                style={{}}
                 key={node.id}
               >
                 <Img
