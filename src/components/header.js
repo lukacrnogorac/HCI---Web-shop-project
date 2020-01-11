@@ -105,8 +105,8 @@ export const Header = ({ children }) => (
             }}
             style={{
               width: "110px",
-              backgroundColor: "#203765",
-              borderColor: "#152442",
+             // backgroundColor: "#203765",
+            //  borderColor: "#152442",
             }}
           >
             Log in
@@ -118,8 +118,8 @@ export const Header = ({ children }) => (
             style={{
               marginLeft: "10px",
               width: "110px",
-              backgroundColor: "#203765",
-              borderColor: "#152442",
+            //  backgroundColor: "#203765",
+             // borderColor: "#152442",
             }}
           >
             Register
