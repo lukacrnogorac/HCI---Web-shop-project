@@ -104,7 +104,7 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
       <Card.Title style={{ margin: "10px" }}>Featured Category</Card.Title>
       {featuredCategories.map(({ node }) => {
         return (
-          <Card.Body
+          <Card
             key={node.id}
             style={{
               display: "grid",
@@ -113,6 +113,8 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
               margin: "0px 10px 10px 10px",
               padding: "0px",
               borderRadius: "5px",
+              height: "min-content",
+              overflow: "hidden"
             }}
           >
             <Img
@@ -150,7 +152,7 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
                 </Button>
               </div>
             </div>
-          </Card.Body>
+          </Card>
         )
       })}
     </Card>
@@ -179,6 +181,7 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
             <Card
               style={{
                 margin: "0px 5px",
+                overflow: "hidden"
               }}
               key={node.id}
             >

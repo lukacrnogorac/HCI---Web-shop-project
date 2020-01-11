@@ -59,7 +59,7 @@ export const Category = ({ location }) => {
             {data.map(({ node }) => {
               return (
                 <Card
-                style={{}}
+                style={{overflow: "hidden"}}
                 key={node.id}
               >
                 <Img
