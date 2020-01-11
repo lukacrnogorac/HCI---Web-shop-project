@@ -16,23 +16,26 @@ const News = ({ data }) => (
               style={{
                 display: "inline-flex",
                 margin: "0px 0px 10px 0px",
+                padding: "10px",
                 backgroundColor: "white",
                 borderRadius: "5px",
                 border: "1px solid rgba(0, 0, 0, 0.125)",
               }}
             >
-              <div className="singleNewsItem" style={{ padding: "5px" }}>
-                <h4 className="newsTitle">{node.id}</h4>
-                <p className="newsParagraph">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </p>
+              <div className="newsItemLeft" style={{display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
+                <div className = "newsItemText">
+                  <h4 className="newsTitle">{node.id}</h4>
+                  <p className="newsParagraph">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book.
+                  </p>
+                </div>
                 <Button
                   variant="outline-secondary"
-                  style={{ marginTop: "100px", width: "200px" }}
+                  style={{ width: "200px" }}
                 >
                   Read more
                 </Button>
