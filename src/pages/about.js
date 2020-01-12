@@ -10,6 +10,7 @@ const About = ({ data }) => {
   return (
     <div>
       <Layout>
+        <div className = "aboutContent" style={{margin: "0px 10px"}}>
         <Carousel interval={2500}>
           {carouselData.frontmatter.carouselData.map(carousel => {
             return (
@@ -72,6 +73,7 @@ const About = ({ data }) => {
               }
             )}
           </div>
+        </div>
         </div>
       </Layout>
     </div>
