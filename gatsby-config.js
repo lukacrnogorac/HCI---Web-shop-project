@@ -11,7 +11,7 @@ module.exports = {
       {
         id: 1,
         name: "Tehnika",
-        folderName: "technique",
+        folderName: "technology",
       },
       {
         id: 2,
