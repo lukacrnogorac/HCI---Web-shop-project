@@ -114,7 +114,7 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
               padding: "0px",
               borderRadius: "5px",
               height: "min-content",
-              overflow: "hidden"
+              overflow: "hidden",
             }}
           >
             <Img
@@ -181,7 +181,7 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
             <Card
               style={{
                 margin: "0px 5px",
-                overflow: "hidden"
+                overflow: "hidden",
               }}
               key={node.id}
             >
