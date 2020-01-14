@@ -2,3 +2,6 @@ login register - istaknit !!! vise puta reka
 probat dodat hover na header
 padding negdi je bija na news ja msm
 smislit nesto da ljudi kad slete na stranicu da znaju sta je
+
+login/register page - Barki
+rest of page with data, see for search filter - me
