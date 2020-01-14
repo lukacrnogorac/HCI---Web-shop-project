@@ -19,8 +19,10 @@ const News = ({ data }) => {
                 key={news.id}
                 style={{
                   display: "inline-flex",
+                  justifyContent: "space-between",
                   margin: "0px 0px 10px 0px",
                   padding: "10px",
+                  width: "100%",
                   backgroundColor: "white",
                   borderRadius: "5px",
                   border: "1px solid rgba(0, 0, 0, 0.125)",
