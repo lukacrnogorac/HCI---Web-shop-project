@@ -6,34 +6,39 @@ import Img from "gatsby-image"
 import { Card, Button } from "react-bootstrap"
 import "../styles/index.css"
 
-const IndexPage = ({ data }) => (
-  <div>
-    <Layout>
-      <Sidebar />
-      <div className="content">
-        <FeaturedProduct featuredProduct={data.allFile.edges[0]} />
-        <FeaturedCategoryVertical
-          featuredCategories={
-            [
-              data.allFile.edges[1],
-              data.allFile.edges[2],
-            ] /* create query for FeaturedCategoryVertical.. */
-          }
-        />
-        <FeaturedCategoryHorizontal featuredCategories={data.allFile.edges} />
-        {/* create query for horizontal.*/}
-        <FeaturedCategoryVertical
-          featuredCategories={
-            [
-              data.allFile.edges[0],
-              data.allFile.edges[3],
-            ] /* create query for FeaturedCategoryVertical.. */
-          }
-        />
-      </div>
-    </Layout>
-  </div>
-)
+const IndexPage = ({ data }) => {
+  const mdx = data.mdxData.edges[0].node.frontmatter.data
+  return (
+    <div>
+      <Layout>
+        <Sidebar />
+        <div className="content">
+          <FeaturedProduct featuredProduct={mdx[7]} />
+          <FeaturedCategoryVertical
+            featuredCategories={
+              [
+                mdx[25],
+                mdx[26],
+              ] /* create query for FeaturedCategoryVertical.. */
+            }
+          />
+          <FeaturedCategoryHorizontal
+            featuredCategories={[mdx[24], mdx[25], mdx[26], mdx[27]]}
+          />
+          {/* create query for horizontal.*/}
+          <FeaturedCategoryVertical
+            featuredCategories={
+              [
+                mdx[10],
+                mdx[13],
+              ] /* create query for FeaturedCategoryVertical.. */
+            }
+          />
+        </div>
+      </Layout>
+    </div>
+  )
+}
 
 export default IndexPage
 
@@ -41,8 +46,8 @@ export const FeaturedProduct = ({ featuredProduct }) => {
   return (
     <Card id="featuredProduct" style={{}}>
       <Img
-        key={featuredProduct.node.id}
-        fluid={featuredProduct.node.childImageSharp.fluid}
+        key={featuredProduct.id}
+        fluid={featuredProduct.image.childImageSharp.fluid}
         className="customImage"
         style={{
           margin: "10px",
@@ -57,19 +62,10 @@ export const FeaturedProduct = ({ featuredProduct }) => {
           padding: "0px",
         }}
       >
-        <Card.Title>Featured Product</Card.Title>
+        <Card.Title>{featuredProduct.title}</Card.Title>
         <Card.Text>
           This is our main product of this month. We offer you great deal if you
-          take this product from our company. This is our main product of this
-          month. We offer you great deal if you take this product from our This
-          is our main product of this month. We offer you great deal if you take
-          this product from our company. This is our main product of this month.
-          We offer you great deal if you take this product from our This is our
-          main product of this month. We offer you great deal if you take this
-          product from our company. This is our main product of this month. We
-          offer you great deal if you take this product from our This is our
-          main product of this month. We offer you great deal if you take this
-          product from our company.
+          take this product from our company. {featuredProduct.description}
         </Card.Text>
         <div
           className="productInformations"
@@ -80,7 +76,7 @@ export const FeaturedProduct = ({ featuredProduct }) => {
           }}
         >
           <Card.Subtitle style={{ alignSelf: "bottom", padding: "6px 0px" }}>
-            XX.XX€
+            {featuredProduct.price}€
           </Card.Subtitle>
           <Button variant="secondary" style={{ alignSelf: "bottom" }}>
             Purchase
@@ -102,10 +98,10 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
       }}
     >
       <Card.Title style={{ margin: "10px" }}>Featured Category</Card.Title>
-      {featuredCategories.map(({ node }) => {
+      {featuredCategories.map(element => {
         return (
           <Card
-            key={node.id}
+            key={element.id}
             style={{
               display: "grid",
               gridTemplateColumns: "0.2fr 1fr",
@@ -118,8 +114,7 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
             }}
           >
             <Img
-              key={node.id}
-              fluid={node.childImageSharp.fluid}
+              fluid={element.image.childImageSharp.fluid}
               className="customImage"
               style={{
                 height: "160px",
@@ -135,7 +130,7 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
                 marginLeft: "10px",
               }}
             >
-              <Card.Title style={{}}>Product</Card.Title>
+              <Card.Title style={{}}>{element.title}</Card.Title>
               <div
                 className="productInformations"
                 style={{
@@ -145,7 +140,7 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
                 }}
               >
                 <Card.Text style={{ padding: "6px 0px", margin: "0px" }}>
-                  XX.XX€
+                  {element.price}€
                 </Card.Text>
                 <Button variant="secondary" style={{ marginRight: "5px" }}>
                   Purchase
@@ -176,25 +171,25 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
           padding: "0px",
         }}
       >
-        {featuredCategories.map(({ node }) => {
+        {featuredCategories.map(element => {
           return (
             <Card
               style={{
                 margin: "0px 5px",
                 overflow: "hidden",
               }}
-              key={node.id}
+              key={element.id}
             >
               <Img
-                fluid={node.childImageSharp.fluid}
+                fluid={element.image.childImageSharp.fluid}
                 className="customImage"
                 style={{
                   height: "220px",
                 }}
               />
               <Card.Body style={{ padding: "10px" }}>
-                <Card.Title>Product</Card.Title>
-                <Card.Text>XX.XX€</Card.Text>
+                <Card.Title>{element.title}</Card.Title>
+                <Card.Text>{element.price}€</Card.Text>
                 <Button variant="secondary" style={{ width: "100%" }}>
                   Purchase
                 </Button>
@@ -209,16 +204,23 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
 
 export const query = graphql`
   {
-    allFile(
-      filter: { absolutePath: { regex: "//content/images/real_images//" } }
-      limit: 4
-    ) {
+    mdxData: allMdx {
       edges {
         node {
-          id
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid_tracedSVG
+          frontmatter {
+            data {
+              category
+              description
+              id
+              price
+              title
+              image {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                  }
+                }
+              }
             }
           }
         }

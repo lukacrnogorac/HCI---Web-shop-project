@@ -99,7 +99,7 @@ export const Header = ({ children }) => (
       <Nav style={{ margin: "0px 10px" }}>
         <Nav.Item>
           <Button
-            variant="secondary"
+            variant="light"
             onClick={() => {
               navigate("/login")
             }}
