@@ -27,7 +27,7 @@ export const RegisterPage = () => {
               </Nav.Link>
             </Nav.Item>
           </Nav>
-          <h1 style={{marginTop: "5px"}}>Register?</h1>
+          <h1 style={{marginTop: "5px"}}>Register</h1>
     
           <Form style={{display: "flex"}}>
             <Form.Group controlId="formBasicFirstname" style={{marginRight: "5px"}}>
