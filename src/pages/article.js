@@ -17,6 +17,17 @@ const Article = ({data, location}) => {
     const article = location.state.element
     let mdx = data.mdxData.edges[0]
     mdx = mdx.node.frontmatter.data
+    let similar = []
+    let j = 0
+    for (let i = 0; i < mdx.length; i++)
+    {
+      if(mdx[i].category === article.category && j < 4 && article.id !== mdx[i].id)
+      {
+        similar[j] = mdx[i]
+        j++
+      }
+    }
+    console.log(similar)
     mdx = mdx.filter(element => {
       if (element.id === article.id) {
         return element
@@ -81,7 +92,7 @@ const Article = ({data, location}) => {
           padding: "0px",
         }}
       >
-        {mdx.map(element => {
+        {similar.map(element => {
           return (
             <Card
               style={{
