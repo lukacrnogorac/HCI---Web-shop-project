@@ -75,7 +75,9 @@ export const Category = ({ data, location }) => {
                       variant="secondary"
                       style={{ width: "100%" }}
                       onClick={() => {
-                        navigate("/article")
+                        navigate("/article", {
+                          state: { element },
+                        })
                       }}
                     >
                       Purchase
