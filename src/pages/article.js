@@ -3,7 +3,12 @@ import Layout from "../components/layout_with_sidebar.js"
 import { graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import Sidebar from "../components/sidebar"
-import { Card, Button } from "react-bootstrap"
+import { Card, Button, InputGroup, FormControl} from "react-bootstrap"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faPlus,
+  faMinus
+} from "@fortawesome/free-solid-svg-icons"
 
 const Article = ({data, location}) => {
   if (!location.state) {
@@ -19,25 +24,92 @@ const Article = ({data, location}) => {
     })
     return (
       <Layout>
+        <Sidebar />
+        <div id="content">
         {mdx.map(element => {
           return (
             <div>
-              <Card>
+              <Card style={{margin: "0 10px 10px", padding: "10px"}}>
                 <Card.Title>{element.title}</Card.Title>
+                <div id="cardContent" style={{display: "grid", gridTemplateColumns:"1fr 1fr"}}>
                 <Img
                   fluid={element.image.childImageSharp.fluid}
                   className="customImage"
                   style={{
-                  //  height: "220px",
+                    height: "300px",
+                    width: "432px"
                   }}
-                />
+                  />
+                  <div id="purchase" style={{alignSelf: "center", justifySelf: "center"}}>
+                    <div style={{display:"flex", alignItems: "center"}}>
+                      <div id="quantity" style={{display: "flex", justifyContent: "space-between", alignItems: "center", padding: "5px"}}>
+                        <FontAwesomeIcon icon={faMinus} style={{margin: "5px"}}/>
+                        <div style={{height:"38px"}}>
+                          <InputGroup className="mb-3" style={{width: "45px"}}>
+                            <FormControl placeholder="1" />
+                          </InputGroup>
+                        </div>
+                        <FontAwesomeIcon icon={faPlus} style={{margin: "5px"}}/>
+                      </div>
+                      <div style={{padding: "5px"}}>{element.price}€</div>
+                    </div>
+                    <Button variant="secondary" style={{width:"100%"}}>
+                      Purchase
+                    </Button>
+                  </div>
+                </div>
               </Card>
-              <Card>
+              <Card style={{margin: "0 10px 10px", padding: "10px"}}>
+                <Card.Title>Description</Card.Title>
                 {element.description}
               </Card>
             </div>
             )
         })}
+      <Card
+      style={{
+        display: "grid",
+        margin: "10px",
+      }}
+    >
+      <Card.Title style={{ margin: "10px" }}>Similar</Card.Title>
+      <Card.Body
+        style={{
+          display: "grid",
+          gridTemplateColumns: "0.25fr 0.25fr 0.25fr 0.25fr",
+          margin: "0px 5px 10px",
+          padding: "0px",
+        }}
+      >
+        {mdx.map(element => {
+          return (
+            <Card
+              style={{
+                margin: "0px 5px",
+                overflow: "hidden",
+              }}
+              key={element.id}
+            >
+              <Img
+                fluid={element.image.childImageSharp.fluid}
+                className="customImage"
+                style={{
+                  height: "220px",
+                }}
+              />
+              <Card.Body style={{ padding: "10px" }}>
+                <Card.Title>{element.title}</Card.Title>
+                <Card.Text>{element.price}€</Card.Text>
+                <Button variant="secondary" style={{ width: "100%" }}>
+                  Purchase
+                </Button>
+              </Card.Body>
+            </Card>
+          )
+        })}
+          </Card.Body>
+        </Card>
+        </div>
         </Layout>
       )
     }
