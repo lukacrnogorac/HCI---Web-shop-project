@@ -187,7 +187,7 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
                   height: "220px",
                 }}
               />
-              <Card.Body style={{ padding: "10px" }}>
+              <Card.Body style={{ padding: "10px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <Card.Title>{element.title}</Card.Title>
                 <Card.Text>{element.price}€</Card.Text>
                 <Button variant="secondary" style={{ width: "100%" }}>

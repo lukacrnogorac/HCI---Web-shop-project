@@ -9,6 +9,5 @@ rest of page with data, see for search filter - me
 
 FIX:
 css modules for login/register
-fix featuredcategoryhorizontal responsiveness
 article responsiveness
 index components linking
