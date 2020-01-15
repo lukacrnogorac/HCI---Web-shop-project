@@ -27,7 +27,6 @@ const Article = ({data, location}) => {
         j++
       }
     }
-    console.log(similar)
     mdx = mdx.filter(element => {
       if (element.id === article.id) {
         return element
