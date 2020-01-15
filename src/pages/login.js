@@ -1,4 +1,5 @@
 import React from "react"
+import { navigate } from "gatsby"
 import Layout from "../components/layout"
 import { Button, Form, Nav } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -39,8 +40,14 @@ export const LoginPage = () => {
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
         <Form>
-            <Button variant="primary" type="submit" style={{ width: "100%" }}>
-              Log In
+            <Button 
+              variant="primary" 
+              type="submit" 
+              onClick={() => {
+                navigate("/")
+              }} 
+              style={{ width: "100%" }}>
+                Log In
             </Button>
             <div style={{display: "flex", justifyContent: "space-around", alignItems: "center", padding: "5px"}}>
               <div>Not a member yet?</div>

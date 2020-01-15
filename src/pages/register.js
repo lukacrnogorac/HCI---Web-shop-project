@@ -1,4 +1,5 @@
 import React from "react"
+import { navigate } from "gatsby"
 import { Button, Form, Nav } from "react-bootstrap"
 import Layout from "../components/layout"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -48,7 +49,13 @@ export const RegisterPage = () => {
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
           <Form style={{display: "grid", gridTemplateColumns: "1fr 1fr"}}>
-            <Button variant="primary" type="submit" style={{ width: "100%" }}>
+            <Button 
+              variant="primary" 
+              type="submit" 
+              onClick={() => {
+                  navigate("/")
+                }}  
+              style={{ width: "100%" }}>
               Register
             </Button>
             <div style={{display: "flex", justifyContent: "space-around", alignItems: "center", paddingLeft: "5px"}}>
