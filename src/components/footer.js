@@ -9,18 +9,21 @@ export const Footer = ({ children }) => (
       bottom: 0,
       width: "100%",
       height: "60px",
-      padding: "0 10px"
+      padding: "0 10px",
     }}
   >
-    <div className = "footerContent" style={{
-      borderTop: "1px solid rgba(0, 0, 0, 0.125)",
-      borderLeft: "1px solid rgba(0, 0, 0, 0.125)",
-      borderRight: "1px solid rgba(0, 0, 0, 0.125)",
-      backgroundColor: "white",
-      borderRadius: "5px 5px 0px 0px",
-      display: "flex",
-      justifyContent: "space-between",
-    }}>
+    <div
+      className="footerContent"
+      style={{
+        borderTop: "1px solid rgba(0, 0, 0, 0.125)",
+        borderLeft: "1px solid rgba(0, 0, 0, 0.125)",
+        borderRight: "1px solid rgba(0, 0, 0, 0.125)",
+        backgroundColor: "white",
+        borderRadius: "5px 5px 0px 0px",
+        display: "flex",
+        justifyContent: "space-between",
+      }}
+    >
       <img
         src={ourLogo}
         width="60px"
