@@ -85,7 +85,13 @@ const Article = ({ data, location }) => {
                         </div>
                         <div style={{ padding: "5px" }}>{element.price}€</div>
                       </div>
-                      <Button variant="secondary" style={{ width: "100%" }}>
+                      <Button
+                        variant="secondary"
+                        style={{ width: "100%" }}
+                        onClick={() => {
+                          alert("Thank you!!")
+                        }}
+                      >
                         Purchase
                       </Button>
                     </div>
@@ -139,7 +145,15 @@ const Article = ({ data, location }) => {
                     >
                       <Card.Title>{element.title}</Card.Title>
                       <Card.Text>{element.price}€</Card.Text>
-                      <Button variant="secondary" style={{ width: "100%" }}>
+                      <Button
+                        variant="secondary"
+                        style={{ width: "100%" }}
+                        onClick={() => {
+                          navigate("/article", {
+                            state: { element },
+                          })
+                        }}
+                      >
                         Purchase
                       </Button>
                     </Card.Body>
