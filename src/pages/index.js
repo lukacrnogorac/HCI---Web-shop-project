@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import Layout from "../components/layout_with_sidebar"
 import Sidebar from "../components/sidebar"
 import Img from "gatsby-image"
@@ -23,14 +23,14 @@ const IndexPage = ({ data }) => {
             }
           />
           <FeaturedCategoryHorizontal
-            featuredCategories={[mdx[24], mdx[25], mdx[26], mdx[27]]}
+            featuredCategories={[mdx[3], mdx[4], mdx[5], mdx[6]]}
           />
           {/* create query for horizontal.*/}
           <FeaturedCategoryVertical
             featuredCategories={
               [
-                mdx[10],
-                mdx[13],
+                mdx[55],
+                mdx[56],
               ] /* create query for FeaturedCategoryVertical.. */
             }
           />
@@ -78,7 +78,11 @@ export const FeaturedProduct = ({ featuredProduct }) => {
           <Card.Subtitle style={{ alignSelf: "bottom", padding: "6px 0px" }}>
             {featuredProduct.price}€
           </Card.Subtitle>
-          <Button variant="secondary" style={{ alignSelf: "bottom" }}>
+          <Button
+            variant="secondary"
+            style={{ alignSelf: "bottom" }}
+            onClick={() => handlePurchaseClick(featuredProduct)}
+          >
             Purchase
           </Button>
         </div>
@@ -142,7 +146,13 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
                 <Card.Text style={{ padding: "6px 0px", margin: "0px" }}>
                   {element.price}€
                 </Card.Text>
-                <Button variant="secondary" style={{ marginRight: "5px" }}>
+                <Button
+                  variant="secondary"
+                  style={{ marginRight: "5px" }}
+                  onClick={() => {
+                    handlePurchaseClick(element)
+                  }}
+                >
                   Purchase
                 </Button>
               </div>
@@ -187,10 +197,23 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
                   height: "220px",
                 }}
               />
-              <Card.Body style={{ padding: "10px" }}>
+              <Card.Body
+                style={{
+                  padding: "10px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                }}
+              >
                 <Card.Title>{element.title}</Card.Title>
                 <Card.Text>{element.price}€</Card.Text>
-                <Button variant="secondary" style={{ width: "100%" }}>
+                <Button
+                  variant="secondary"
+                  style={{ width: "100%" }}
+                  onClick={() => {
+                    handlePurchaseClick(element)
+                  }}
+                >
                   Purchase
                 </Button>
               </Card.Body>
@@ -200,6 +223,12 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
       </Card.Body>
     </Card>
   )
+}
+
+function handlePurchaseClick(element) {
+  navigate("/article", {
+    state: { element },
+  })
 }
 
 export const query = graphql`

@@ -5,3 +5,9 @@ smislit nesto da ljudi kad slete na stranicu da znaju sta je
 
 login/register page - Barki
 rest of page with data, see for search filter - me
+
+
+FIX:
+css modules for login/register
+article responsiveness
+index components linking

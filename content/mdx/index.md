@@ -83,7 +83,7 @@ data: [
     id: 11,
     title: 2 person table,
     description: "Want to share beautiful moments with your significant other? Don't have a significant other? Either way, this table is perfect for you.",
-    image: ../images/furniture/alexandralivingroom.jpg,
+    image: ../images/furniture/creativecouple.jpg,
     price: 150,
     category: furniture
 },

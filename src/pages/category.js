@@ -68,14 +68,23 @@ export const Category = ({ data, location }) => {
                       height: "220px",
                     }}
                   />
-                  <Card.Body style={{ padding: "10px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                  <Card.Body
+                    style={{
+                      padding: "10px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                    }}
+                  >
                     <Card.Title>{element.title}</Card.Title>
                     <Card.Text>{element.price}€</Card.Text>
                     <Button
                       variant="secondary"
                       style={{ width: "100%" }}
                       onClick={() => {
-                        navigate("/article")
+                        navigate("/article", {
+                          state: { element },
+                        })
                       }}
                     >
                       Purchase
