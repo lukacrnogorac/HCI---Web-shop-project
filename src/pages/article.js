@@ -37,7 +37,7 @@ const Article = ({ data, location }) => {
         <div id="content">
           {mdx.map(element => {
             return (
-              <div>
+              <div key={element.id}>
                 <Card style={{ margin: "0 10px 10px", padding: "10px" }}>
                   <Card.Title>{element.title}</Card.Title>
                   <div
