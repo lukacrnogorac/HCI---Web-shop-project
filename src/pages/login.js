@@ -5,11 +5,13 @@ import Footer from "../components/footer.js"
 import { Button, Form, Nav } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
+import { Helmet } from "react-helmet"
 
 export const LoginPage = () => {
   return (
-    <div style={{backgroundColor: "#EAEDED", minHeight: "100vh"}}>
-    <Header />
+    <div style={{ backgroundColor: "#EAEDED", minHeight: "100vh" }}>
+      <Helmet title="Login | Web-shop" />
+      <Header />
       <Form
         style={{
           margin: "0 auto",
@@ -72,7 +74,7 @@ export const LoginPage = () => {
           </div>
         </div>
       </Form>
-    <Footer />
+      <Footer />
     </div>
   )
 }

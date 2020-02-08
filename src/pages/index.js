@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => {
   const mdx = data.mdxData.edges[0].node.frontmatter.data
   return (
     <div>
-      <Layout>
+      <Layout title="Home | Web-shop">
         <Sidebar />
         <div className="content">
           <FeaturedProduct featuredProduct={mdx[7]} />

@@ -5,10 +5,12 @@ import Header from "../components/header.js"
 import Footer from "../components/footer.js"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
+import { Helmet } from "react-helmet"
 
 export const RegisterPage = () => {
   return (
-    <div style={{backgroundColor: "#EAEDED", minHeight: "100vh"}}>
+    <div style={{ backgroundColor: "#EAEDED", minHeight: "100vh" }}>
+      <Helmet title="Register | Web-shop" />
       <Header />
       <Form
         style={{

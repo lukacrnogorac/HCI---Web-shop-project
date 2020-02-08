@@ -9,7 +9,7 @@ const ArticleDetails = ({ location }) => {
   } else {
     const item = location.state.news
     return (
-      <Layout>
+      <Layout title="Article details | Web-shop">
         <div key={item.id}>
           <Card
             id="articleDetail"

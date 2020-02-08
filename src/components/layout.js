@@ -1,9 +1,11 @@
 import React from "react"
 import Header from "../components/header.js"
 import Footer from "../components/footer.js"
+import { Helmet } from "react-helmet"
 
-export const Layout = ({ children }) => (
+export const Layout = props => (
   <div id="biggestContainer" style={{ backgroundColor: "#EAEDED" }}>
+    <Helmet title={props.title} defer={false} />
     <Header />
     <div
       id="container"
@@ -17,7 +19,7 @@ export const Layout = ({ children }) => (
         id="mainContent"
         style={{ paddingBottom: "60px", gridTemplateColumns: "1fr" }}
       >
-        {children}
+        {props.children}
       </div>
       <Footer />
     </div>
