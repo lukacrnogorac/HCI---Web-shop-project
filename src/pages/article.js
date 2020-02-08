@@ -46,6 +46,7 @@ const Article = ({ data, location }) => {
                       style={{
                         height: "300px",
                         maxWidth: "480px",
+                        borderRadius: "5px",
                       }}
                     />
                     <div
