@@ -26,11 +26,7 @@ const Article = ({ data, location }) => {
         j++
       }
     }
-    mdx = mdx.filter(element => {
-      if (element.id === article.id) {
-        return element
-      }
-    })
+    mdx = mdx.filter(element => (element.id === article.id ? element : null))
     return (
       <Layout>
         <Sidebar />

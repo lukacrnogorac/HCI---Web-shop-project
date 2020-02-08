@@ -1,6 +1,6 @@
 import React from "react"
 import { navigate } from "gatsby"
-import { Nav, Button, InputGroup, FormControl } from "react-bootstrap"
+import { Nav, Button } from "react-bootstrap"
 import "../styles/header.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
