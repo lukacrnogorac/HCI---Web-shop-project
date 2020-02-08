@@ -20,7 +20,7 @@ export const Header = ({ children }) => {
         marginBottom: "10px",
         display: "flex",
         justifyContent: "space-between",
-        minWidth: "320px"
+        minWidth: "320px",
       }}
     >
       <div className="header-left" style={{ display: "flex" }}>
@@ -85,11 +85,6 @@ export const Header = ({ children }) => {
         </Nav>
       </div>
       <div
-        className="header-middle"
-        style={{ display: "flex", alignItems: "center" }}
-      >
-      </div>
-      <div
         className="header-right"
         style={{ display: "flex", alignItems: "center" }}
       >
@@ -101,9 +96,7 @@ export const Header = ({ children }) => {
               onClick={() => {
                 navigate("/login")
               }}
-              style={{
-
-              }}
+              style={{}}
             >
               Log in
             </Button>
@@ -116,7 +109,6 @@ export const Header = ({ children }) => {
               }}
               style={{
                 marginLeft: "10px",
-
               }}
             >
               Register

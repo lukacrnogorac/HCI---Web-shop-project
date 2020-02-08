@@ -1,18 +1,48 @@
-import React from "react"
+import React, { useState } from "react"
 import Layout from "../components/layout.js"
 import { Button } from "react-bootstrap"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import { Card, InputGroup, FormControl } from "react-bootstrap"
+import * as JsSearch from "js-search"
 
 const News = ({ data }) => {
+  const [search, setSearch] = useState("")
   const mdx = data.mdxData.edges[0].node.frontmatter.data
   const allNews = mdx.slice(mdx.length - 25)
+  const newsIndex = new JsSearch.Search("id")
+  newsIndex.addIndex("category")
+  newsIndex.addIndex("description")
+  newsIndex.addIndex("title")
+  newsIndex.addIndex("price")
+  newsIndex.addDocuments(allNews)
+  const newsForShow = search ? newsIndex.search(search) : allNews
   return (
     <div>
       <Layout>
         <div className="newsContent" style={{ margin: "0px 10px" }}>
           <h1 style={{ marginBottom: "5px" }}>News</h1>
-          {allNews.map(news => {
+          <Card
+            className="searchbox"
+            style={{
+              height: "50px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div className="searchbar" style={{ height: "38px" }}>
+              <InputGroup className="mb-3">
+                <FormControl
+                  placeholder="Search for article"
+                  onKeyUp={e => {
+                    setSearch(e.target.value)
+                  }}
+                />
+              </InputGroup>
+            </div>
+          </Card>
+          {newsForShow.map(news => {
             return (
               <div
                 className="newsItem"
