@@ -176,9 +176,9 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
     >
       <Card.Title style={{ margin: "10px" }}>Featured Category</Card.Title>
       <Card.Body
+        id="featuredHorizontalGrid"
         style={{
           display: "grid",
-          gridTemplateColumns: "0.25fr 0.25fr 0.25fr 0.25fr",
           margin: "0px 5px 10px",
           padding: "0px",
         }}
@@ -186,7 +186,7 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
         {featuredCategories.map(element => {
           return (
             <Card
-              id={element.id}
+              id={"card" + element.id}
               style={{
                 margin: "0px 5px",
                 overflow: "hidden",
