@@ -1,17 +1,19 @@
 import React from "react"
 import { navigate } from "gatsby"
-import Layout from "../components/layout"
+import Header from "../components/header.js"
+import Footer from "../components/footer.js"
 import { Button, Form, Nav } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
 export const LoginPage = () => {
   return (
-    <Layout>
+    <div style={{backgroundColor: "#EAEDED", minHeight: "100vh"}}>
+    <Header />
       <Form
         style={{
           margin: "0 auto",
-          //maxWidth: "320px",
+          width: "320px",
           position: "relative",
           top: "35%",
           backgroundColor: "white",
@@ -24,7 +26,7 @@ export const LoginPage = () => {
           <Nav.Item>
             <Nav.Link
               href="/"
-              style={{ position: "absolute", left: "100%", padding: "0px 5px" }}
+              style={{ position: "absolute", right: "0%", padding: "0px 5px" }}
             >
               <FontAwesomeIcon
                 id="cancelIcon"
@@ -70,7 +72,8 @@ export const LoginPage = () => {
           </div>
         </Form>
       </Form>
-    </Layout>
+    <Footer />
+    </div>
   )
 }
 
