@@ -11,3 +11,6 @@ FIX:
 css modules for login/register
 article responsiveness
 index components linking
+
+Add search on news page
+Add items for newspage?

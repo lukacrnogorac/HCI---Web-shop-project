@@ -1,0 +1,55 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #cardContent {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.3fr;
+    }
+    
+    #similarGrid {
+        grid-template-columns: 0.5fr 0.5fr;
+
+    }
+    #similar0 {
+        grid-column: 1/2;
+    }
+
+    #similar1{
+        grid-column: 2/3;
+    }
+
+    #similar2 {
+        display: none;
+    }
+
+    #similar3 {
+        display: none;
+    }
+  }
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    #cardContent {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    #similarGrid {
+        grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+    }
+    #similar0 {
+        grid-column: 1/2;
+    }
+
+    #similar1{
+        grid-column: 2/3;
+    }
+
+    #similar2 {
+        grid-column: 3/4;
+    }
+
+    #similar3 {
+        grid-column: 4/5;
+    }
+
+  }
+  

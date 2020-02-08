@@ -45,16 +45,18 @@ export default IndexPage
 export const FeaturedProduct = ({ featuredProduct }) => {
   return (
     <Card id="featuredProduct" style={{}}>
-      <Img
-        key={featuredProduct.id}
-        fluid={featuredProduct.image.childImageSharp.fluid}
-        className="customImage"
-        style={{
-          margin: "10px",
-          borderRadius: "5px",
-          alignSelf: "center",
-        }}
-      />
+      <div className="image-container">
+        <Img
+          key={featuredProduct.id}
+          fluid={featuredProduct.image.childImageSharp.fluid}
+          className="customImage"
+          style={{
+            margin: "10px",
+            borderRadius: "5px",
+            alignSelf: "center",
+          }}
+        />
+      </div>
       <Card.Body
         style={{
           display: "grid",
@@ -105,10 +107,9 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
       {featuredCategories.map(element => {
         return (
           <Card
+            className="verticalCard"
             key={element.id}
             style={{
-              display: "grid",
-              gridTemplateColumns: "0.2fr 1fr",
               border: "1px solid rgba(0, 0, 0, 0.125)",
               margin: "0px 10px 10px 10px",
               padding: "0px",
@@ -117,21 +118,23 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
               overflow: "hidden",
             }}
           >
-            <Img
-              fluid={element.image.childImageSharp.fluid}
-              className="customImage"
-              style={{
-                height: "160px",
-                width: "280px",
-                margin: "0px",
-              }}
-            />
+            <div className="image-container">
+              <Img
+                fluid={element.image.childImageSharp.fluid}
+                className="customImage"
+                style={{
+                  height: "160px",
+                  margin: "0px",
+                }}
+              />
+            </div>
             <div
               className="secondPart"
               style={{
                 display: "grid",
-                gridTemplateRows: "0.5fr 0.47fr",
+                gridTemplateRows: "0.5fr 0.5fr",
                 marginLeft: "10px",
+                padding: "10px",
               }}
             >
               <Card.Title style={{}}>{element.title}</Card.Title>
@@ -148,7 +151,6 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
                 </Card.Text>
                 <Button
                   variant="secondary"
-                  style={{ marginRight: "5px" }}
                   onClick={() => {
                     handlePurchaseClick(element)
                   }}
@@ -174,9 +176,9 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
     >
       <Card.Title style={{ margin: "10px" }}>Featured Category</Card.Title>
       <Card.Body
+        id="featuredHorizontalGrid"
         style={{
           display: "grid",
-          gridTemplateColumns: "0.25fr 0.25fr 0.25fr 0.25fr",
           margin: "0px 5px 10px",
           padding: "0px",
         }}
@@ -184,6 +186,7 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
         {featuredCategories.map(element => {
           return (
             <Card
+              id={"card" + element.id}
               style={{
                 margin: "0px 5px",
                 overflow: "hidden",

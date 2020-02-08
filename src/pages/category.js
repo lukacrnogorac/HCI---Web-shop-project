@@ -4,21 +4,24 @@ import { graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import Sidebar from "../components/sidebar"
 import { Card, Button, InputGroup, FormControl } from "react-bootstrap"
+import * as JsSearch from "js-search"
 
 export const Category = ({ data, location }) => {
   const [search, setSearch] = useState("")
-  const [categoryData, setCategoryData] = useState([])
   if (!location.state) {
     return <Layout></Layout>
   } else {
     const categoryModel = location.state.categoryModel
     let mdx = data.mdxData.edges[0]
     mdx = mdx.node.frontmatter.data
-    mdx = mdx.filter(element => {
-      if (element.category === categoryModel.folderName) {
-        return element
-      }
-    })
+    mdx = mdx.filter(element =>
+      element.category === categoryModel.folderName ? element : null
+    )
+    const categoryIndex = new JsSearch.Search("id")
+    categoryIndex.addIndex("description")
+    categoryIndex.addIndex("title")
+    categoryIndex.addDocuments(mdx)
+    const categoryData = search ? categoryIndex.search(search) : mdx
     return (
       <Layout>
         <Sidebar />
@@ -27,7 +30,6 @@ export const Category = ({ data, location }) => {
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
             margin: "0px 10px 10px 10px",
             backgroundColor: "white",
             border: "1px solid rgba(0, 0, 0, 0.125",
@@ -49,100 +51,68 @@ export const Category = ({ data, location }) => {
                   placeholder="Search for product"
                   onKeyUp={e => {
                     setSearch(e.target.value)
-                    const imageSharp = mdx[0].image.childImageSharp.fluid
-                    mdx = mdx.filter(element => {
-                      const title = element.title.toLowerCase()
-                      if (title.includes(e.target.value.toLowerCase())) {
-                        return element
-                      }
-                    })
-                    if (!mdx.length) {
-                      mdx.push({
-                        id: 1500,
-                        hidden: "hidden",
-                        category: categoryModel.folderName,
-                        description: "Null",
-                        title: "No Title",
-                        image: {
-                          childImageSharp: {
-                            fluid: imageSharp,
-                          },
-                        },
-                      })
-                    }
-                    setCategoryData(mdx)
                   }}
                 />
               </InputGroup>
             </div>
           </Card>
-          {pageContent(
-            categoryData.length && categoryData[0].category === mdx[0].category
-              ? categoryData
-              : mdx
-          )}
+          <div
+            className="cardGrid"
+            style={{
+              margin: "10px",
+              display: "grid",
+              gridGap: "10px",
+              gridTemplateColumns:
+                "repeat(auto-fit, minmax(274px, max-content))",
+              justifyContent: "center",
+            }}
+          >
+            {categoryData.map(element => {
+              return (
+                <Card
+                  style={{
+                    overflow: "hidden",
+                  }}
+                  key={element.id}
+                  data-id={element.id}
+                >
+                  <Img
+                    fluid={element.image.childImageSharp.fluid}
+                    className="customImage"
+                    style={{
+                      height: "220px",
+                    }}
+                  />
+                  <Card.Body
+                    style={{
+                      padding: "10px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Card.Title>{element.title}</Card.Title>
+                    <Card.Text>{element.price}€</Card.Text>
+                    <Button
+                      variant="secondary"
+                      style={{ width: "100%" }}
+                      onClick={() => {
+                        navigate("/article", {
+                          state: { element },
+                        })
+                      }}
+                    >
+                      Purchase
+                    </Button>
+                  </Card.Body>
+                </Card>
+              )
+            })}
+          </div>
         </div>
       </Layout>
     )
   }
-}
-
-function pageContent(mdx) {
-  return (
-    <div
-      className="cardGrid"
-      style={{
-        margin: "10px",
-        display: "grid",
-        gridGap: "10px",
-        gridTemplateColumns: "repeat(auto-fit, minmax(274px, max-content))",
-        justifyContent: "center",
-      }}
-    >
-      {mdx.map(element => {
-        return (
-          <Card
-            style={{
-              overflow: "hidden",
-              visibility: element.hidden ? "hidden" : "visible",
-            }}
-            key={element.id}
-            data-id={element.id}
-          >
-            <Img
-              fluid={element.image.childImageSharp.fluid}
-              className="customImage"
-              style={{
-                height: "220px",
-              }}
-            />
-            <Card.Body
-              style={{
-                padding: "10px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
-              <Card.Title>{element.title}</Card.Title>
-              <Card.Text>{element.price}€</Card.Text>
-              <Button
-                variant="secondary"
-                style={{ width: "100%" }}
-                onClick={() => {
-                  navigate("/article", {
-                    state: { element },
-                  })
-                }}
-              >
-                Purchase
-              </Button>
-            </Card.Body>
-          </Card>
-        )
-      })}
-    </div>
-  )
 }
 
 export default Category

@@ -1,17 +1,21 @@
 import React from "react"
 import { navigate } from "gatsby"
 import { Button, Form, Nav } from "react-bootstrap"
-import Layout from "../components/layout"
+import Header from "../components/header.js"
+import Footer from "../components/footer.js"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
 export const RegisterPage = () => {
   return (
-    <Layout>
+    <div style={{backgroundColor: "#EAEDED", minHeight: "100vh"}}>
+      <Header />
       <Form
         style={{
           margin: "0 auto",
           position: "relative",
+          maxWidth: "500px",
+          minWidth: "320px",
           top: "35%",
           backgroundColor: "white",
           border: "1px solid rgba(0, 0, 0, 0.125)",
@@ -23,7 +27,7 @@ export const RegisterPage = () => {
           <Nav.Item>
             <Nav.Link
               href="/"
-              style={{ position: "absolute", left: "100%", padding: "0px 5px" }}
+              style={{ position: "absolute", right: "0%", padding: "0px 5px" }}
             >
               <FontAwesomeIcon
                 id="cancelIcon"
@@ -35,7 +39,7 @@ export const RegisterPage = () => {
         </Nav>
         <h1 style={{ marginTop: "5px" }}>Register</h1>
 
-        <Form style={{ display: "flex" }}>
+        <div style={{ display: "flex" }}>
           <Form.Group
             controlId="formBasicFirstname"
             style={{ marginRight: "5px" }}
@@ -50,7 +54,7 @@ export const RegisterPage = () => {
             <Form.Label style={{ marginBottom: "2px" }}>Last name</Form.Label>
             <Form.Control type="name" placeholder="Last name" />
           </Form.Group>
-        </Form>
+        </div>
         <Form.Group controlId="formBasicEmail">
           <Form.Label style={{ marginBottom: "2px" }}>Email address</Form.Label>
           <Form.Control type="email" placeholder="Email address" />
@@ -59,7 +63,7 @@ export const RegisterPage = () => {
           <Form.Label style={{ marginBottom: "2px" }}>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-        <Form style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
           <Button
             variant="primary"
             type="submit"
@@ -83,9 +87,10 @@ export const RegisterPage = () => {
               Log in
             </Nav.Link>
           </div>
-        </Form>
+        </div>
       </Form>
-    </Layout>
+      <Footer />
+    </div>
   )
 }
 

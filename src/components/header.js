@@ -1,6 +1,6 @@
 import React from "react"
 import { navigate } from "gatsby"
-import { Nav, Button, InputGroup, FormControl } from "react-bootstrap"
+import { Nav, Button } from "react-bootstrap"
 import "../styles/header.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -20,6 +20,7 @@ export const Header = ({ children }) => {
         marginBottom: "10px",
         display: "flex",
         justifyContent: "space-between",
+        minWidth: "320px",
       }}
     >
       <div className="header-left" style={{ display: "flex" }}>
@@ -33,14 +34,14 @@ export const Header = ({ children }) => {
           />
         </Nav.Link>
         <Nav variant="pills" defaultActiveKey="/">
-          <Nav.Item>
+          <Nav.Item id="homeButton">
             <Nav.Link
               href="/"
               eventKey="Home"
               style={{
                 color: "white",
                 height: "50px",
-                padding: "0px 20px",
+                maxPadding: "0px 20px",
                 display: "flex",
                 alignItems: "center",
               }}
@@ -49,14 +50,14 @@ export const Header = ({ children }) => {
               <FontAwesomeIcon id="homeIcon" icon={faHome} />
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item>
+          <Nav.Item id="aboutButton">
             <Nav.Link
               eventKey="About"
               href="/about"
               style={{
                 color: "white",
                 height: "50px",
-                padding: "0px 20px",
+                maxPadding: "0px 20px",
                 display: "flex",
                 alignItems: "center",
               }}
@@ -65,14 +66,14 @@ export const Header = ({ children }) => {
               <FontAwesomeIcon id="aboutIcon" icon={faAddressCard} />
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item>
+          <Nav.Item id="newsButton">
             <Nav.Link
               eventKey="News"
               href="/news"
               style={{
                 color: "white",
                 height: "50px",
-                padding: "0px 20px",
+                maxPadding: "0px 20px",
                 display: "flex",
                 alignItems: "center",
               }}
@@ -84,31 +85,18 @@ export const Header = ({ children }) => {
         </Nav>
       </div>
       <div
-        className="header-middle"
-        style={{ display: "flex", alignItems: "center" }}
-      >
-        <div className="searchbar" style={{ height: "38px" }}>
-          <InputGroup className="mb-3">
-            <FormControl placeholder="Search for product" />
-          </InputGroup>
-        </div>
-      </div>
-      <div
         className="header-right"
         style={{ display: "flex", alignItems: "center" }}
       >
         <Nav style={{ margin: "0px 10px" }}>
           <Nav.Item>
             <Button
+              id="loginButton"
               variant="light"
               onClick={() => {
                 navigate("/login")
               }}
-              style={{
-                width: "110px",
-                // backgroundColor: "#203765",
-                //  borderColor: "#152442",
-              }}
+              style={{}}
             >
               Log in
             </Button>
@@ -121,9 +109,6 @@ export const Header = ({ children }) => {
               }}
               style={{
                 marginLeft: "10px",
-                width: "110px",
-                //  backgroundColor: "#203765",
-                // borderColor: "#152442",
               }}
             >
               Register
