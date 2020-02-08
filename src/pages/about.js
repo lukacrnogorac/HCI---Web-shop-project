@@ -4,6 +4,7 @@ import Carousel from "react-bootstrap/Carousel"
 import Img from "gatsby-image"
 import { Card } from "react-bootstrap"
 import { graphql } from "gatsby"
+import "../styles/about.css"
 
 const About = ({ data }) => {
   const { mdxData, aboutCards } = data
