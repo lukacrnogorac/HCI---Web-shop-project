@@ -46,7 +46,7 @@ export const LoginPage = () => {
           <Form.Label style={{ marginBottom: "2px" }}>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-        <Form>
+        <div>
           <Button
             variant="primary"
             type="submit"
@@ -70,7 +70,7 @@ export const LoginPage = () => {
               Register
             </Nav.Link>
           </div>
-        </Form>
+        </div>
       </Form>
     <Footer />
     </div>

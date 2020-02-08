@@ -39,7 +39,7 @@ export const RegisterPage = () => {
         </Nav>
         <h1 style={{ marginTop: "5px" }}>Register</h1>
 
-        <Form style={{ display: "flex" }}>
+        <div style={{ display: "flex" }}>
           <Form.Group
             controlId="formBasicFirstname"
             style={{ marginRight: "5px" }}
@@ -54,7 +54,7 @@ export const RegisterPage = () => {
             <Form.Label style={{ marginBottom: "2px" }}>Last name</Form.Label>
             <Form.Control type="name" placeholder="Last name" />
           </Form.Group>
-        </Form>
+        </div>
         <Form.Group controlId="formBasicEmail">
           <Form.Label style={{ marginBottom: "2px" }}>Email address</Form.Label>
           <Form.Control type="email" placeholder="Email address" />
@@ -63,7 +63,7 @@ export const RegisterPage = () => {
           <Form.Label style={{ marginBottom: "2px" }}>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-        <Form style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
           <Button
             variant="primary"
             type="submit"
@@ -87,7 +87,7 @@ export const RegisterPage = () => {
               Log in
             </Nav.Link>
           </div>
-        </Form>
+        </div>
       </Form>
       <Footer />
     </div>
