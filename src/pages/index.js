@@ -45,16 +45,18 @@ export default IndexPage
 export const FeaturedProduct = ({ featuredProduct }) => {
   return (
     <Card id="featuredProduct" style={{}}>
-      <Img
-        key={featuredProduct.id}
-        fluid={featuredProduct.image.childImageSharp.fluid}
-        className="customImage"
-        style={{
-          margin: "10px",
-          borderRadius: "5px",
-          alignSelf: "center",
-        }}
-      />
+      <div className="image-container">
+        <Img
+          key={featuredProduct.id}
+          fluid={featuredProduct.image.childImageSharp.fluid}
+          className="customImage"
+          style={{
+            margin: "10px",
+            borderRadius: "5px",
+            alignSelf: "center",
+          }}
+        />
+      </div>
       <Card.Body
         style={{
           display: "grid",
