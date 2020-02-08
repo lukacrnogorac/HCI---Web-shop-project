@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Card, InputGroup, FormControl } from "react-bootstrap"
 import * as JsSearch from "js-search"
+import "../styles/news.css"
 
 const News = ({ data }) => {
   const [search, setSearch] = useState("")
@@ -29,9 +30,10 @@ const News = ({ data }) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              marginBottom: "10px"
             }}
           >
-            <div className="searchbar" style={{ height: "38px" }}>
+            <div className="searchbar" style={{ height: "38px"}}>
               <InputGroup className="mb-3">
                 <FormControl
                   placeholder="Search for article"
@@ -48,8 +50,6 @@ const News = ({ data }) => {
                 className="newsItem"
                 key={news.id}
                 style={{
-                  display: "inline-flex",
-                  justifyContent: "space-between",
                   margin: "0px 0px 10px 0px",
                   padding: "10px",
                   width: "100%",
@@ -80,12 +80,12 @@ const News = ({ data }) => {
                     Read more
                   </Button>
                 </div>
-                <div className="newsImage">
+                <div className="newsImage" style={{display: "flex", justifyContent: "center"}}>
                   <Img
                     fluid={news.image.childImageSharp.fluid}
                     className="img-fluid"
                     style={{
-                      height: "250px",
+                     height: "250px",
                       width: "250px",
                       borderRadius: "5px",
                     }}
