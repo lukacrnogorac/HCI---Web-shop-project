@@ -14,11 +14,9 @@ export const Category = ({ data, location }) => {
     const categoryModel = location.state.categoryModel
     let mdx = data.mdxData.edges[0]
     mdx = mdx.node.frontmatter.data
-    mdx = mdx.filter(element => {
-      if (element.category === categoryModel.folderName) {
-        return element
-      }
-    })
+    mdx = mdx.filter(element =>
+      element.category === categoryModel.folderName ? element : null
+    )
     const categoryIndex = new JsSearch.Search("id")
     categoryIndex.addIndex("description")
     categoryIndex.addIndex("title")

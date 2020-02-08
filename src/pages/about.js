@@ -9,11 +9,9 @@ const About = ({ data }) => {
   const { mdxData, aboutCards } = data
   let mdx = mdxData.edges[0]
   mdx = mdx.node.frontmatter.data
-  mdx = mdx.filter(element => {
-    if (element.category === "carousel") {
-      return element
-    }
-  })
+  mdx = mdx.filter(element =>
+    element.category === "carousel" ? element : null
+  )
 
   return (
     <div>
