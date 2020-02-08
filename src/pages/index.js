@@ -186,6 +186,7 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
         {featuredCategories.map(element => {
           return (
             <Card
+              id={element.id}
               style={{
                 margin: "0px 5px",
                 overflow: "hidden",
