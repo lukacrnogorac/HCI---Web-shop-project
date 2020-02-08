@@ -29,7 +29,7 @@ const Article = ({ data, location }) => {
     }
     mdx = mdx.filter(element => (element.id === article.id ? element : null))
     return (
-      <Layout>
+      <Layout title="Article | Web-shop">
         <Sidebar />
         <div id="content">
           {mdx.map(element => {
@@ -37,11 +37,7 @@ const Article = ({ data, location }) => {
               <div key={element.id}>
                 <Card style={{ margin: "0 10px 10px", padding: "10px" }}>
                   <Card.Title>{element.title}</Card.Title>
-                  <div
-                    id="cardContent"
-                    style={{ display: "grid",
-                   }}
-                  >
+                  <div id="cardContent" style={{ display: "grid" }}>
                     <Img
                       fluid={element.image.childImageSharp.fluid}
                       className="customImage"
@@ -111,7 +107,7 @@ const Article = ({ data, location }) => {
           >
             <Card.Title style={{ margin: "10px" }}>Similar</Card.Title>
             <div
-              id = "similarGrid"
+              id="similarGrid"
               style={{
                 display: "grid",
                 //gridTemplateColumns: "0.25fr 0.25fr 0.25fr 0.25fr",
@@ -127,7 +123,7 @@ const Article = ({ data, location }) => {
                       overflow: "hidden",
                     }}
                     key={element.id}
-                    id = {"similar" + index}
+                    id={"similar" + index}
                   >
                     <Img
                       fluid={element.image.childImageSharp.fluid}

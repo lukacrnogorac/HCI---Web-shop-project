@@ -16,7 +16,7 @@ const About = ({ data }) => {
 
   return (
     <div>
-      <Layout>
+      <Layout title="About | Web-shop">
         <div className="aboutContent" style={{ margin: "0px 10px" }}>
           <Carousel interval={2500}>
             {mdx.map(carousel => {
