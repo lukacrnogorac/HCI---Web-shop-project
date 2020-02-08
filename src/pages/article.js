@@ -6,6 +6,7 @@ import Sidebar from "../components/sidebar"
 import { Card, Button, InputGroup, FormControl } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
+import "../styles/article.css"
 
 const Article = ({ data, location }) => {
   if (!location.state) {
@@ -38,7 +39,8 @@ const Article = ({ data, location }) => {
                   <Card.Title>{element.title}</Card.Title>
                   <div
                     id="cardContent"
-                    style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}
+                    style={{ display: "grid",
+                   }}
                   >
                     <Img
                       fluid={element.image.childImageSharp.fluid}
@@ -107,15 +109,16 @@ const Article = ({ data, location }) => {
             }}
           >
             <Card.Title style={{ margin: "10px" }}>Similar</Card.Title>
-            <Card.Body
+            <div
+              id = "similarGrid"
               style={{
                 display: "grid",
-                gridTemplateColumns: "0.25fr 0.25fr 0.25fr 0.25fr",
+                //gridTemplateColumns: "0.25fr 0.25fr 0.25fr 0.25fr",
                 margin: "0px 5px 10px",
                 padding: "0px",
               }}
             >
-              {similar.map(element => {
+              {similar.map((element, index) => {
                 return (
                   <Card
                     style={{
@@ -123,6 +126,7 @@ const Article = ({ data, location }) => {
                       overflow: "hidden",
                     }}
                     key={element.id}
+                    id = {"similar" + index}
                   >
                     <Img
                       fluid={element.image.childImageSharp.fluid}
@@ -156,7 +160,7 @@ const Article = ({ data, location }) => {
                   </Card>
                 )
               })}
-            </Card.Body>
+            </div>
           </Card>
         </div>
       </Layout>
