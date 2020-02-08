@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Layout from "../components/layout.js"
 import { Button } from "react-bootstrap"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import { Card, InputGroup, FormControl } from "react-bootstrap"
 import * as JsSearch from "js-search"
@@ -76,6 +76,11 @@ const News = ({ data }) => {
                   <Button
                     variant="outline-secondary"
                     style={{ width: "200px" }}
+                    onClick={() =>
+                      navigate("/article-details", {
+                        state: { news },
+                      })
+                    }
                   >
                     Read more
                   </Button>
