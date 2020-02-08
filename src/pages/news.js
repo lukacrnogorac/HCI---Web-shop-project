@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Layout from "../components/layout.js"
 import { Button } from "react-bootstrap"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import { Card, InputGroup, FormControl } from "react-bootstrap"
 import * as JsSearch from "js-search"
@@ -20,7 +20,7 @@ const News = ({ data }) => {
   const newsForShow = search ? newsIndex.search(search) : allNews
   return (
     <div>
-      <Layout>
+      <Layout title="News | Web-shop">
         <div className="newsContent" style={{ margin: "0px 10px" }}>
           <h1 style={{ marginBottom: "5px" }}>News</h1>
           <Card
@@ -30,10 +30,10 @@ const News = ({ data }) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              marginBottom: "10px"
+              marginBottom: "10px",
             }}
           >
-            <div className="searchbar" style={{ height: "38px"}}>
+            <div className="searchbar" style={{ height: "38px" }}>
               <InputGroup className="mb-3">
                 <FormControl
                   placeholder="Search for article"
@@ -76,16 +76,24 @@ const News = ({ data }) => {
                   <Button
                     variant="outline-secondary"
                     style={{ width: "200px" }}
+                    onClick={() =>
+                      navigate("/article-details", {
+                        state: { news },
+                      })
+                    }
                   >
                     Read more
                   </Button>
                 </div>
-                <div className="newsImage" style={{display: "flex", justifyContent: "center"}}>
+                <div
+                  className="newsImage"
+                  style={{ display: "flex", justifyContent: "center" }}
+                >
                   <Img
                     fluid={news.image.childImageSharp.fluid}
                     className="img-fluid"
                     style={{
-                     height: "250px",
+                      height: "250px",
                       width: "250px",
                       borderRadius: "5px",
                     }}

@@ -23,7 +23,10 @@ export const Category = ({ data, location }) => {
     categoryIndex.addDocuments(mdx)
     const categoryData = search ? categoryIndex.search(search) : mdx
     return (
-      <Layout>
+      <Layout
+        title={`${categoryModel.folderName.charAt(0).toUpperCase() +
+          categoryModel.folderName.substring(1)} | Web-shop`}
+      >
         <Sidebar />
         <div
           className="content"
