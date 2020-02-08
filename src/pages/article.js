@@ -49,7 +49,7 @@ const Article = ({ data, location }) => {
                       className="customImage"
                       style={{
                         height: "300px",
-                        width: "432px",
+                        // width: "432px",
                       }}
                     />
                     <div
