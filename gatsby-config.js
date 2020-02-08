@@ -10,22 +10,22 @@ module.exports = {
     categories: [
       {
         id: 1,
-        name: "Tehnika",
+        name: "Technology",
         folderName: "technology",
       },
       {
         id: 2,
-        name: "Namjestaj",
+        name: "Furniture",
         folderName: "furniture",
       },
       {
         id: 3,
-        name: "Razno",
+        name: "Various",
         folderName: "various",
       },
       {
         id: 4,
-        name: "Sportska oprema",
+        name: "Sports Equipment",
         folderName: "sports",
       },
     ],
