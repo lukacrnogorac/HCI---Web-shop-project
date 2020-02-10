@@ -7,6 +7,8 @@ import { Card, InputGroup, FormControl } from "react-bootstrap"
 import * as JsSearch from "js-search"
 import "../styles/news.css"
 
+const titleAdditions = ["New On Offer: ", "Low Supplies Of ", "Big Sale On ", "Temporarily Unavailable: "];
+
 const News = ({ data }) => {
   const [search, setSearch] = useState("")
   const mdx = data.mdxData.edges[0].node.frontmatter.data
@@ -30,7 +32,7 @@ const News = ({ data }) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              marginBottom: "10px",
+              marginBottom: "5px",
             }}
           >
             <div className="searchbar" style={{ height: "38px" }}>
@@ -67,7 +69,7 @@ const News = ({ data }) => {
                   }}
                 >
                   <div className="newsItemText">
-                    <h4 className="newsTitle">{news.title}</h4>
+                    <h4 className="newsTitle">{titleAdditions[Math.floor(Math.random() * titleAdditions.length)] + news.title}</h4>
                     <p className="newsParagraph">
                       Maybe create property for news page. This is{" "}
                       <strong>{news.title}</strong>. {news.description}
