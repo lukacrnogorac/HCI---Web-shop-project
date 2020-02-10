@@ -64,7 +64,7 @@ export const FeaturedProduct = ({ featuredProduct }) => {
           padding: "0px",
         }}
       >
-        <Card.Title>{featuredProduct.title}</Card.Title>
+        <Card.Title>Featured - {featuredProduct.title}</Card.Title>
         <Card.Text>
           This is our main product of this month. We offer you great deal if you
           take this product from our company. {featuredProduct.description}
@@ -103,7 +103,7 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
         margin: "10px",
       }}
     >
-      <Card.Title style={{ margin: "10px" }}>Featured Category</Card.Title>
+      <Card.Title style={{ margin: "10px" }}>Featured Category - {featuredCategories[0].category[0].toUpperCase() + featuredCategories[0].category.slice(1)}</Card.Title>
       {featuredCategories.map(element => {
         return (
           <Card
@@ -174,7 +174,7 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
         margin: "10px",
       }}
     >
-      <Card.Title style={{ margin: "10px" }}>Featured Category</Card.Title>
+      <Card.Title style={{ margin: "10px" }}>Featured Category - {featuredCategories[0].category[0].toUpperCase() + featuredCategories[0].category.slice(1)}</Card.Title>
       <Card.Body
         id="featuredHorizontalGrid"
         style={{
