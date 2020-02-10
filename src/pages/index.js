@@ -103,7 +103,7 @@ export const FeaturedCategoryVertical = ({ featuredCategories }) => {
         margin: "10px",
       }}
     >
-      <Card.Title style={{ margin: "10px" }}>Featured Category - {featuredCategories[0].category}</Card.Title>
+      <Card.Title style={{ margin: "10px" }}>Featured Category - {featuredCategories[0].category[0].toUpperCase() + featuredCategories[0].category.slice(1)}</Card.Title>
       {featuredCategories.map(element => {
         return (
           <Card
@@ -174,7 +174,7 @@ export const FeaturedCategoryHorizontal = ({ featuredCategories }) => {
         margin: "10px",
       }}
     >
-      <Card.Title style={{ margin: "10px" }}>Featured Category - {featuredCategories[0].category}</Card.Title>
+      <Card.Title style={{ margin: "10px" }}>Featured Category - {featuredCategories[0].category[0].toUpperCase() + featuredCategories[0].category.slice(1)}</Card.Title>
       <Card.Body
         id="featuredHorizontalGrid"
         style={{
