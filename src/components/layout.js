@@ -13,6 +13,8 @@ export const Layout = props => (
         position: "relative",
         minHeight: "100vh",
         margin: "0 auto",
+        marginTop: "50px",
+        paddingTop: "10px"
       }}
     >
       <div
