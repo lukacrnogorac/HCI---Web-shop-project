@@ -81,13 +81,13 @@ const Article = ({ data, location }) => {
                         <div style={{ padding: "5px" }}>{element.price}€</div>
                       </div>
                       <Button
-                        variant="secondary"
+                        variant="primary"
                         style={{ width: "100%" }}
                         onClick={() => {
-                          alert("Thank you!!")
+                          window.confirm("Are you sure?")
                         }}
                       >
-                        Purchase
+                        Buy now
                       </Button>
                     </div>
                   </div>
