@@ -21,6 +21,10 @@ export const Header = ({ children }) => {
         display: "flex",
         justifyContent: "space-between",
         minWidth: "320px",
+        position: "fixed",
+        width: "100%",
+        zIndex: "9999",
+        top: "0"
       }}
     >
       <div className="header-left" style={{ display: "flex" }}>

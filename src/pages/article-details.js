@@ -41,6 +41,7 @@ const ArticleDetails = ({ location }) => {
                   src={authorImage}
                   width="50px"
                   height="50px"
+                  alt="authorImage"
                   style={{padding: "0px", marginRight: "5px", borderRadius: "50%"}}
                   />
                   <div>
@@ -93,6 +94,7 @@ const ArticleDetails = ({ location }) => {
             <div id="userComment" style={{display: "flex"}}>
               <img 
               src={defaultProfile}
+              alt="user"
               width="50px"
               height="50px"
               style={{padding: "5px", borderRadius: "50%"}}
