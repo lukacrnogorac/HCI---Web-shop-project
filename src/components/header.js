@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import ourLogo from "../../content/logo.jpg"
 
-export const Header = ({ children }) => {
+export const Header = () => {
   return (
     <div
       className="navigation"
@@ -24,7 +24,7 @@ export const Header = ({ children }) => {
         position: "fixed",
         width: "100%",
         zIndex: "9999",
-        top: "0"
+        top: "0",
       }}
     >
       <div className="header-left" style={{ display: "flex" }}>

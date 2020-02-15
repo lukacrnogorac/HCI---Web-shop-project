@@ -14,6 +14,7 @@ const News = ({ data }) => {
   const mdx = data.mdxData.edges[0].node.frontmatter.data
   const allNews = mdx.slice(mdx.length - 25)
   const newsIndex = new JsSearch.Search("id")
+  newsIndex.sanitizer = new JsSearch.LowerCaseSanitizer()
   newsIndex.addIndex("category")
   newsIndex.addIndex("description")
   newsIndex.addIndex("title")
