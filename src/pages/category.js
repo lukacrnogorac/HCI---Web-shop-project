@@ -18,6 +18,7 @@ export const Category = ({ data, location }) => {
       element.category === categoryModel.folderName ? element : null
     )
     const categoryIndex = new JsSearch.Search("id")
+    categoryIndex.sanitizer = new JsSearch.LowerCaseSanitizer()
     categoryIndex.addIndex("description")
     categoryIndex.addIndex("title")
     categoryIndex.addDocuments(mdx)
