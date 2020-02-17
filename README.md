@@ -7,5 +7,5 @@
 <h1 align="center">
   HCI - Web Shop
 </h1>
-
+<h1>https://hci-webshop.netlify.com</h1>
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e5d5be62-e264-4d81-95cf-60fd64f4042e/deploy-status)](https://app.netlify.com/sites/hci-webshop/deploys)
